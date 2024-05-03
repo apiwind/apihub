@@ -31,6 +31,7 @@ jobs:
 
       - name: Push to a new branch
         run: |
+          echo ${{ secrets.APIHUB_GITHUB_TOKEN }}
           git checkout -b new-branch-for-main
           git push origin new-branch-for-main
 
