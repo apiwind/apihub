@@ -31,4 +31,4 @@ jobs:
         git add .
         git checkout -b "build"
         git commit -m "Deploy changes from dev to main"
-        git push --force https://thlz998:${{ secrets.github.APIHUB_GITHUB_TOKEN }}@github.com/apiwind/apihub build
+        git push --force https://thlz998:${{ secrets.APIHUB_GITHUB_TOKEN }}@github.com/apiwind/apihub build
