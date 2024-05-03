@@ -1,0 +1,35 @@
+{
+    "name": "OpenAI",
+    "description": "OpenAI API",
+    "version": "1.0.0",
+    "openapi": "",
+    "paths": {
+        "/api/test": {
+            "get": {
+                "tags": [
+                    "test"
+                ],
+                "summary": "测试接口",
+                "description": "这是一个测试接口",
+                "operationId": "test",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

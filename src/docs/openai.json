@@ -1,0 +1,6 @@
+{
+    "name": "OpenAI",
+    "description": "OpenAI API",
+    "version": "1.0.0",
+    "openapi": "openai.json"
+}
