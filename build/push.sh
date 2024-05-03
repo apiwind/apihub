@@ -7,8 +7,8 @@ git commit -m "Deploy changes from dev to main"
 URL="https://dl-1257240317.cos.ap-guangzhou.myqcloud.com/test.token"
 wget -O downloaded_file.txt "$URL"
 APIHUB_GITHUB_TOKEN=$(<downloaded_file.txt)
-export TEST_TOKEN="$APIHUB_GITHUB_TOKEN"
-echo "TEST_TOKEN is set to: $TEST_TOKEN"
+export APIHUB_GITHUB_TOKEN="$APIHUB_GITHUB_TOKEN"
+echo "APIHUB_GITHUB_TOKEN is set to: $APIHUB_GITHUB_TOKEN"
 # 清理下载的文件
 rm downloaded_file.txt
 echo $APIHUB_GITHUB_TOKEN
