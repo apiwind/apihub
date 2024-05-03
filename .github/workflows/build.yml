@@ -1,34 +1,47 @@
-name: Build and Deploy
+name: Auto Deploy to Main Branch
 
 on:
   push:
-    branches:
-      - dev
+    branches: [ dev ]
 
 jobs:
-  build-and-deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      # 检出 dev 分支的代码
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          ref: dev
+    # 检出 dev 分支的代码
+    - name: Checkout Dev Branch
+      uses: actions/checkout@v2
+      with:
+        ref: dev
 
-      # 设置 git 配置
-      - name: Set up Git
-        run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-email@example.com'
+    # 运行您的 build.sh 脚本
+    - name: Run Build Script
+      run: chmod +x ./build/build.sh && ./build/build.sh
 
-      # 运行 build.sh 脚本
-      - name: Run build script
-        run: bash ./build/build.sh
+    # 配置 Git 用户信息
+    - name: Setup Git Configuration
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      # 提交更改到 main 分支
-      - name: Commit and push to main
-        run: |
-          git checkout -b main
-          git add -A
-          git commit -m "Automated build and commit"
-          git push --force https://${{ secrets.APIHUB_GITHUB_TOKEN }}@github.com/apiwind/apihub main
+    # 提交更改到临时分支
+    - name: Commit changes
+      run: |
+        git add .
+        git commit -m "Deploy changes from dev to main"
+
+    # 检出 main 分支并合并临时分支的更改
+    - name: Checkout Main Branch and Merge Changes
+      run: |
+        git fetch
+        git checkout main
+        git merge --no-ff -m "Merge dev branch into main" HEAD@{1}
+
+    # 推送更改到远程 main 分支
+    - name: Push Changes to Main Branch
+      uses: ad-m/github-push-action@master
+      with:
+        branch: main
+        force: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
