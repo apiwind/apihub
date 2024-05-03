@@ -37,7 +37,7 @@ jobs:
       - name: Create Pull Request
         uses: repo-sync/pull-request@v2
         with:
-          github_token: ${{ secrets.APIHUB_GITHUB_TOKEN }}
+          token: ${{ secrets.APIHUB_GITHUB_TOKEN }}
           pr_title: "Automated Deployment to Main"
           pr_body: "Auto-generated Pull Request from GitHub Actions"
           destination_branch: "main"
