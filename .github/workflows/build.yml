@@ -31,4 +31,4 @@ jobs:
           git checkout -b main
           git add -A
           git commit -m "Automated build and commit"
-          git push --force https://${{ secrets.APIHUB_GITHUB_TOKEN }}@github.com/${{ github.repository }} origin main
+          git push --force https://${{ secrets.APIHUB_GITHUB_TOKEN }}@github.com/${{ github.repository }} main
