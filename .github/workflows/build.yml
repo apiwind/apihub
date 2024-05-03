@@ -36,7 +36,7 @@ jobs:
       run: |
         git fetch
         git checkout main
-        git merge --no-ff -m "Merge dev branch into main" HEAD@{1}
+        git merge --no-ff --allow-unrelated-histories -m "Merge dev branch into main" dev
 
     # 推送更改到远程 main 分支
     - name: Push Changes to Main Branch
