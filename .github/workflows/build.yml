@@ -35,7 +35,8 @@ jobs:
           git add .
           git commit -m "build"
           git checkout main
-          git push origin build
+          git merge build
+          git push -u origin main
 
       - name: Create Pull Request
         uses: repo-sync/pull-request@v2
