@@ -16,8 +16,8 @@ jobs:
 
       - name: Set up Git config
         run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-email@example.com'
+          git config --global user.name 'build-bot'
+          git config --global user.email 'build@apihub.bot'
 
       - name: Run build script
         run: |
@@ -37,7 +37,7 @@ jobs:
       - name: Create Pull Request
         uses: repo-sync/pull-request@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.APIHUB_GITHUB_TOKEN }}
           pr_title: "Automated Deployment to Main"
           pr_body: "Auto-generated Pull Request from GitHub Actions"
           destination_branch: "main"
