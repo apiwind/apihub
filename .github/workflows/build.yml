@@ -29,11 +29,13 @@ jobs:
           git add .
           git commit -m "Automated build and deploy to main branch" || echo "No changes to commit"
 
-      - name: Push to a new branch
+      - name: Push to main
         run: |
-          echo ${{ secrets.APIHUB_GITHUB_TOKEN }}
-          git checkout -b new-branch-for-main
-          git push origin new-branch-for-main
+          git checkout -b build
+          git add .
+          git commit -m "build"
+          git checkout main
+          git push origin build
 
       - name: Create Pull Request
         uses: repo-sync/pull-request@v2
