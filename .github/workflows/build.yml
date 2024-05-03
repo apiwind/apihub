@@ -27,6 +27,6 @@ jobs:
 
     # 提交更改到临时分支
     - name: Commit changes
-      env:
-        APIHUB_GITHUB_TOKEN: ${{ secrets.APIHUB_GITHUB_TOKEN }}
+      # env:
+        # APIHUB_GITHUB_TOKEN: ${{ secrets.APIHUB_GITHUB_TOKEN }}
       run: chmod +x ./build/push.sh && ./build/push.sh
