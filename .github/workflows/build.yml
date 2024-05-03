@@ -31,7 +31,6 @@ jobs:
         git checkout main
         git add .
         git commit -m "build"
-        git push
 
     # 推送更改到远程 main 分支
     - name: Push Changes to Main Branch
