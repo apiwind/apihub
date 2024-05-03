@@ -1,4 +1,4 @@
-name: Deploy to Main Branch
+name: Build and Deploy
 
 on:
   push:
@@ -9,26 +9,26 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout dev branch
-        uses: actions/checkout@v2
-
-      - name: Set up Git config
-        run: |
-          git config --global user.name 'build-bot'
-          git config --global user.email 'build@apihub.bot'
-
-      - name: Run build script
-        run: |
-          chmod +x ./build/build.sh
-          ./build/build.sh
-
-      - name: Commit files
-        run: |
-          git add .
-          git commit -m "Automated build and deploy to main branch" || echo "No changes to commit"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      # 检出 dev 分支的代码
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          ref: dev
+
+      # 设置 git 配置
+      - name: Set up Git
+        run: |
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-email@example.com'
+
+      # 运行 build.sh 脚本
+      - name: Run build script
+        run: bash ./build/build.sh
+
+      # 提交更改到 main 分支
+      - name: Commit and push to main
+        run: |
+          git checkout -b main
+          git add -A
+          git commit -m "Automated build and commit"
+          git push origin main
