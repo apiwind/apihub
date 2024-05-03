@@ -31,10 +31,4 @@ jobs:
         git add .
         git checkout -b "build"
         git commit -m "Deploy changes from dev to main"
-
-    # 推送更改到远程 main 分支
-    - name: Push Changes to Main Branch
-      uses: ad-m/github-push-action@master
-      with:
-        branch: build
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git push --force https://thlz998:${{ secrets.github.APIHUB_GITHUB_TOKEN }}@github.com/apiwind/apihub build
