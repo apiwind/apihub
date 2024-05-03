@@ -44,4 +44,4 @@ jobs:
       with:
         branch: main
         force: true
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.APIHUB_GITHUB_TOKEN }}
