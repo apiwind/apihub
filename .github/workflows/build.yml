@@ -18,15 +18,3 @@ jobs:
     # 运行您的 build.sh 脚本
     - name: Run Build Script
       run: chmod +x ./build/build.sh && ./build/build.sh
-
-    # 配置 Git 用户信息
-    - name: Setup Git Configuration
-      run: |
-        git config user.name "${{ github.actor }}"
-        git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-    # 提交更改到临时分支
-    - name: Commit changes
-      # env:
-        # APIHUB_GITHUB_TOKEN: ${{ secrets.APIHUB_GITHUB_TOKEN }}
-      run: chmod +x ./build/push.sh && ./build/push.sh
