@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "Youtube transcriptor", 
+            "description": "Transcript Youtube Podcasts & videos.  "
+        }
+    }, 
+    "openapi": "Youtube transcriptor.json"
+}

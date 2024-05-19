@@ -1,0 +1,112 @@
+{
+    "paths": {
+        "transcript": {
+            "get": {
+                "description": "Transcript videos. ", 
+                "parameters": [
+                    {
+                        "description": "Example : youtube.com/watch?v=0-fD8SDEvrR. ", 
+                        "required": true, 
+                        "in": "query", 
+                        "name": "video_id", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "auto detect language if none provided.. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "lang", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "youtube-transcriptor.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "Transcript videos. ",
+                "servers": ["youtube-transcriptor.p.rapidapi.com"],
+                "responses": {
+                    "200": {
+                        "schema": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "availableLangs": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "lengthInSeconds": {
+                                "type": "string"
+                              },
+                              "thumbnails": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "url": {
+                                      "type": "string"
+                                    },
+                                    "width": {
+                                      "type": "integer"
+                                    },
+                                    "height": {
+                                      "type": "integer"
+                                    }
+                                  }
+                                }
+                              },
+                              "transcription": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "subtitle": {
+                                      "type": "string"
+                                    },
+                                    "start": {
+                                      "type": "number"
+                                    },
+                                    "dur": {
+                                      "type": "number"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "name": "Youtube transcriptor", 
+    "description": "Transcript Youtube Podcasts & videos.  "
+}
