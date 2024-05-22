@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "Validect - Email Verification", 
+            "description": "Verify existence of specified email address using Validect API  "
+        }
+    }, 
+    "openapi": "Validect - Email Verification.json"
+}

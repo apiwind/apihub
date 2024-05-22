@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "Translate", 
+            "description": "Easy and reliable Machine Translation and Language Detection   "
+        }
+    }, 
+    "openapi": "Translate.json"
+}

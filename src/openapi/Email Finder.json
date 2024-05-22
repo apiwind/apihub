@@ -1,0 +1,86 @@
+{
+    "paths": {
+        "/find-emails": {
+            "get": {
+                "servers": [
+                    "email-finder4.p.rapidapi.com"
+                ],
+                "description": "Find the company emails of a professional by full name (John Doe) and email domain (@company.com). ",
+                "parameters": [
+                    {
+                        "description": "The name of the person/professional to find. We recommend using the full name of the person for more accurate results, eg, Bill Gates. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "name",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "The email domain of the company or person to search for, eg, microsoft.com. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "email_domain",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "email-finder4.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Find the company emails of a professional by full name (John Doe) and email domain (@company.com). ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "sources": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "name": "Email Finder",
+    "description": "Find The Email Address of a Professional - e.g. John Doe @ company.com on the Web. Use this Super-Fast and Simple API to find the email address of a professional by full name (John Doe) and email domain (@company.com) as found on the web. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  "
+}

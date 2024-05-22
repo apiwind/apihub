@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "Currency Conversion and Exchange Rates", 
+            "description": "The Currency Conversion and Exchange Rates API provides quick and easy access to currency conversion. Implement this into your application to do localized currency, exchange rates, and more!   "
+        }
+    }, 
+    "openapi": "Currency Conversion and Exchange Rates.json"
+}

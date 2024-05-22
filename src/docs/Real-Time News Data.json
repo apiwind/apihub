@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "Real-Time News Data", 
+            "description": "Get Top News Globally, per Topic or Search Local News from Google News in Real-Time. Use this API to get the top news globally or per topic and search for news by query and geographic area. Powered by Google News. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  "
+        }
+    }, 
+    "openapi": "Real-Time News Data.json"
+}

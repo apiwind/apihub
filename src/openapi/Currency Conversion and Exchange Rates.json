@@ -1,0 +1,390 @@
+{
+    "paths": {
+        "/timeseries": {
+            "get": {
+                "servers": [
+                    "currency-conversion-and-exchange-rates.p.rapidapi.com"
+                ], 
+                "description": "Retrieve historical rates between two specified dates.. ", 
+                "parameters": [
+                    {
+                        "description": "Format \"2019-01-01\". ", 
+                        "required": true, 
+                        "in": "query", 
+                        "name": "start_date", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "Format \"2019-01-01\". ", 
+                        "required": true, 
+                        "in": "query", 
+                        "name": "end_date", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "Three-letter currency code of the currency would would like to convert from. This currency will be converted into the code of the currency provided in the to parameter. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "from", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "A comma-separated list of currency codes to convert the from parameter into.. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "to", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "currency-conversion-and-exchange-rates.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "Retrieve historical rates between two specified dates.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "base": {
+                                    "type": "string"
+                                },
+                                "end_date": {
+                                    "type": "string"
+                                },
+                                "rates": {
+                                    "type": "object"
+                                },
+                                "start_date": {
+                                    "type": "string"
+                                },
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "timeseries": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 
+        "/convert": {
+            "get": {
+                "servers": [
+                    "currency-conversion-and-exchange-rates.p.rapidapi.com"
+                ], 
+                "description": "In addition to providing converstion rates, our API provides a dedicated endpoint to easily do conversion on a specific amount of the currency.. ", 
+                "parameters": [
+                    {
+                        "description": "The three-letter currency code of the currency you would like to convert from.. ", 
+                        "required": true, 
+                        "in": "path", 
+                        "name": "from", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "The three-letter currency code of the currency you would like to convert to.. ", 
+                        "required": true, 
+                        "in": "path", 
+                        "name": "to", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "The amount to be converted.. ", 
+                        "required": true, 
+                        "in": "path", 
+                        "name": "amount", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "Optionally, provide a specific date (format YYYY-MM-DD) to use historical rates for this conversion.. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "date", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "currency-conversion-and-exchange-rates.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "In addition to providing converstion rates, our API provides a dedicated endpoint to easily do conversion on a specific amount of the currency.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "type": "string"
+                                },
+                                "info": {
+                                    "type": "object"
+                                },
+                                "query": {
+                                    "type": "object"
+                                },
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "result": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 
+        "/symbols": {
+            "get": {
+                "servers": [
+                    "currency-conversion-and-exchange-rates.p.rapidapi.com"
+                ], 
+                "description": "Retrieve a list of all currently available currency symbols. ", 
+                "parameters": [
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "currency-conversion-and-exchange-rates.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "Retrieve a list of all currently available currency symbols. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "symbols": {
+                                    "type": "object"
+                                },
+                                "success": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 
+        "/{date}": {
+            "get": {
+                "servers": [
+                    "currency-conversion-and-exchange-rates.p.rapidapi.com"
+                ], 
+                "description": "Retrieve historical exchange rate data. Data is available for most currencies all the way back to the year of 1999.. ", 
+                "parameters": [
+                    {
+                        "description": "The date to retrieve the historical exchange rates from.. ", 
+                        "required": true, 
+                        "in": "path", 
+                        "name": "date", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "Three-letter currency code of the currency would would like to convert from. This currency will be converted into the code of the currency provided in the to parameter. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "from", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "A comma-separated list of currency codes to convert the from parameter into.. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "to", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "currency-conversion-and-exchange-rates.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "Retrieve historical exchange rate data. Data is available for most currencies all the way back to the year of 1999.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "base": {
+                                    "type": "string"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "historical": {
+                                    "type": "boolean"
+                                },
+                                "rates": {
+                                    "type": "object"
+                                },
+                                "timestamp": {
+                                    "type": "number"
+                                },
+                                "success": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 
+        "/latest": {
+            "get": {
+                "servers": [
+                    "currency-conversion-and-exchange-rates.p.rapidapi.com"
+                ], 
+                "description": "Retrieve the latest exchange rate data. Refresh rate will depend on your subscription: updated every 60 minutes, every 10 minutes or every 60 seconds.. ", 
+                "parameters": [
+                    {
+                        "description": "Three-letter currency code of the currency would would like to convert from. This currency will be converted into the code of the currency provided in the to parameter. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "from", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "description": "A comma-separated list of currency codes to convert the from parameter into.. ", 
+                        "required": false, 
+                        "in": "query", 
+                        "name": "to", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Key", 
+                        "value": "SIGN-UP-FOR-KEY", 
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "header", 
+                        "name": "X-RapidAPI-Host", 
+                        "value": "currency-conversion-and-exchange-rates.p.rapidapi.com", 
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ], 
+                "summary": "Retrieve the latest exchange rate data. Refresh rate will depend on your subscription: updated every 60 minutes, every 10 minutes or every 60 seconds.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "base": {
+                                    "type": "string"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "rates": {
+                                    "type": "object"
+                                },
+                                "timestamp": {
+                                    "type": "number"
+                                },
+                                "success": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "name": "Currency Conversion and Exchange Rates", 
+    "description": "The Currency Conversion and Exchange Rates API provides quick and easy access to currency conversion. Implement this into your application to do localized currency, exchange rates, and more!   "
+}
