@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "zsxkib_instant-id", 
+            "description": "Make realistic images of real people instantly"
+        }
+    }, 
+    "openapi": "zsxkib_instant-id.json"
+}

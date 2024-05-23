@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "nightmareai_real-esrgan", 
+            "description": "Real-ESRGAN with optional face correction and adjustable upscale"
+        }
+    }, 
+    "openapi": "nightmareai_real-esrgan.json"
+}

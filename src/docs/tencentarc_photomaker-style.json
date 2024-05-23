@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "tencentarc_photomaker-style", 
+            "description": "Create photos, paintings and avatars for anyone in any style within seconds. (Stylization version)"
+        }
+    }, 
+    "openapi": "tencentarc_photomaker-style.json"
+}

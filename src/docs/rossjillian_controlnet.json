@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "rossjillian_controlnet", 
+            "description": "Control diffusion models"
+        }
+    }, 
+    "openapi": "rossjillian_controlnet.json"
+}

@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "salesforce_blip", 
+            "description": "Bootstrapping Language-Image Pre-training"
+        }
+    }, 
+    "openapi": "salesforce_blip.json"
+}

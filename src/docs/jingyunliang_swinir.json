@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "jingyunliang_swinir", 
+            "description": "Image Restoration Using Swin Transformer"
+        }
+    }, 
+    "openapi": "jingyunliang_swinir.json"
+}

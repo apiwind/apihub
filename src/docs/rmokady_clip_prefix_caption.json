@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "rmokady_clip_prefix_caption", 
+            "description": "Simple image captioning model using CLIP and GPT-2"
+        }
+    }, 
+    "openapi": "rmokady_clip_prefix_caption.json"
+}

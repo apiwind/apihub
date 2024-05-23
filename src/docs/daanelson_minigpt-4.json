@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "daanelson_minigpt-4", 
+            "description": "A model which generates text in response to an input image and prompt."
+        }
+    }, 
+    "openapi": "daanelson_minigpt-4.json"
+}

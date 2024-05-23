@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "fofr_face-to-sticker", 
+            "description": "Turn a face into a sticker"
+        }
+    }, 
+    "openapi": "fofr_face-to-sticker.json"
+}

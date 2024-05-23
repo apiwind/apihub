@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "adirik_styletts2", 
+            "description": "Generates speech from text"
+        }
+    }, 
+    "openapi": "adirik_styletts2.json"
+}

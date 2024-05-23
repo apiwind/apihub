@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "abiruyt_text-extract-ocr", 
+            "description": "A simple OCR Model that can easily extract text from an image."
+        }
+    }, 
+    "openapi": "abiruyt_text-extract-ocr.json"
+}

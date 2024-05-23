@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "riffusion_riffusion", 
+            "description": "Stable diffusion for real-time music generation"
+        }
+    }, 
+    "openapi": "riffusion_riffusion.json"
+}

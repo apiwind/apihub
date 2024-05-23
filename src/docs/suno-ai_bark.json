@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "suno-ai_bark", 
+            "description": "\ud83d\udd0a Text-Prompted Generative Audio Model"
+        }
+    }, 
+    "openapi": "suno-ai_bark.json"
+}

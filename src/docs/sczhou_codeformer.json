@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "sczhou_codeformer", 
+            "description": "Robust face restoration algorithm for old photos / AI-generated faces"
+        }
+    }, 
+    "openapi": "sczhou_codeformer.json"
+}

@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "meta_musicgen", 
+            "description": "Generate music from a prompt or melody"
+        }
+    }, 
+    "openapi": "meta_musicgen.json"
+}

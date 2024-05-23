@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "deforum_deforum_stable_diffusion", 
+            "description": "Animating prompts with stable diffusion"
+        }
+    }, 
+    "openapi": "deforum_deforum_stable_diffusion.json"
+}

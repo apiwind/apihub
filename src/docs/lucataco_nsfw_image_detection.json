@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "lucataco_nsfw_image_detection", 
+            "description": "Falcons.ai Fine-Tuned Vision Transformer (ViT) for NSFW Image Classification"
+        }
+    }, 
+    "openapi": "lucataco_nsfw_image_detection.json"
+}

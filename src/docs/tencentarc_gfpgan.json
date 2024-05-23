@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "tencentarc_gfpgan", 
+            "description": "Practical face restoration algorithm for *old photos* or *AI-generated faces*"
+        }
+    }, 
+    "openapi": "tencentarc_gfpgan.json"
+}

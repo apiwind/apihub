@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "yorickvp_llava-v1.6-vicuna-13b", 
+            "description": "LLaVA v1.6: Large Language and Vision Assistant (Vicuna-13B)"
+        }
+    }, 
+    "openapi": "yorickvp_llava-v1.6-vicuna-13b.json"
+}

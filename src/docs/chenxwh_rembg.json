@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "chenxwh_rembg", 
+            "description": "Remove images background"
+        }
+    }, 
+    "openapi": "chenxwh_rembg.json"
+}

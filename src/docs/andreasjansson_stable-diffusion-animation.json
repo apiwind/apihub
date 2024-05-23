@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "andreasjansson_stable-diffusion-animation", 
+            "description": "Animate Stable Diffusion by interpolating between two prompts"
+        }
+    }, 
+    "openapi": "andreasjansson_stable-diffusion-animation.json"
+}

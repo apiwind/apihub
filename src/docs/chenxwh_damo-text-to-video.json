@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "chenxwh_damo-text-to-video", 
+            "description": "Multi-stage text-to-video generation"
+        }
+    }, 
+    "openapi": "chenxwh_damo-text-to-video.json"
+}

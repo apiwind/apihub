@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "openai_whisper", 
+            "description": "Convert speech in audio to text"
+        }
+    }, 
+    "openapi": "openai_whisper.json"
+}

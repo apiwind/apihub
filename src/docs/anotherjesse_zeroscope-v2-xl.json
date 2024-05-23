@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "anotherjesse_zeroscope-v2-xl", 
+            "description": "Zeroscope V2 XL & 576w"
+        }
+    }, 
+    "openapi": "anotherjesse_zeroscope-v2-xl.json"
+}

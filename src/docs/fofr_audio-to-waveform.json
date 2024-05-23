@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "fofr_audio-to-waveform", 
+            "description": "Create a waveform video from audio"
+        }
+    }, 
+    "openapi": "fofr_audio-to-waveform.json"
+}

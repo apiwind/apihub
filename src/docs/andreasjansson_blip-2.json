@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "andreasjansson_blip-2", 
+            "description": "Answers questions about images"
+        }
+    }, 
+    "openapi": "andreasjansson_blip-2.json"
+}

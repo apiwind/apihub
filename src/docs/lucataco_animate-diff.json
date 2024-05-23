@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "lucataco_animate-diff", 
+            "description": "Animate Your Personalized Text-to-Image Diffusion Models"
+        }
+    }, 
+    "openapi": "lucataco_animate-diff.json"
+}

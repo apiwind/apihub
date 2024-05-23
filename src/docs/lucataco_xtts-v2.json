@@ -1,0 +1,9 @@
+{
+    "info": {
+        "us": {
+            "name": "lucataco_xtts-v2", 
+            "description": "Coqui XTTS-v2: Multilingual Text To Speech Voice Cloning"
+        }
+    }, 
+    "openapi": "lucataco_xtts-v2.json"
+}
