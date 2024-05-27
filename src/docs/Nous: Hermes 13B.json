@@ -1,0 +1,14 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://openrouter.ai/models/nousresearch/nous-hermes-llama2-13b", 
+            "price": {
+                "input": "$0.18", 
+                "output": "$0.18"
+            }, 
+            "name": "Nous: Hermes 13B", 
+            "description": "A state-of-the-art language model fine-tuned on over 300k instructions by Nous Research, with Teknium and Emozilla leading the fine tuning process."
+        }
+    }, 
+    "openapi": "Nous: Hermes 13B.json"
+}

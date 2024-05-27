@@ -1,0 +1,14 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://openrouter.ai/models/google/gemini-pro", 
+            "price": {
+                "input": "$0.125", 
+                "output": "$0.375"
+            }, 
+            "name": "Google: Gemini Pro 1.0", 
+            "description": "Google's flagship text generation model. Designed to handle natural language tasks, multiturn text and code chat, and code generation.\nSee the benchmarks and prompting guidelines from [Deepmind](https://deepmind.google/technologies/gemini/).\nUsage of Gemini is subject to Google's [Gemini Terms of Use](https://ai.google.dev/terms)."
+        }
+    }, 
+    "openapi": "Google: Gemini Pro 1.0.json"
+}
