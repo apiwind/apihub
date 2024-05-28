@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/cjwbw/damo-text-to-video", 
             "name": "chenxwh_damo-text-to-video", 
             "description": "Multi-stage text-to-video generation"
         }

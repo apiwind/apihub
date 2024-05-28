@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/cjwbw/rembg", 
             "name": "chenxwh_rembg", 
             "description": "Remove images background"
         }

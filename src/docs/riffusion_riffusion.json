@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/riffusion/riffusion", 
             "name": "riffusion_riffusion", 
             "description": "Stable diffusion for real-time music generation"
         }

@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/fofr/become-image", 
             "name": "fofr_become-image", 
             "description": "Adapt any picture of a face into another image"
         }

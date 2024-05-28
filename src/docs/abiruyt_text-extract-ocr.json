@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/abiruyt/text-extract-ocr", 
             "name": "abiruyt_text-extract-ocr", 
             "description": "A simple OCR Model that can easily extract text from an image."
         }

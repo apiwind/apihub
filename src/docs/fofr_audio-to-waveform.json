@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/fofr/audio-to-waveform", 
             "name": "fofr_audio-to-waveform", 
             "description": "Create a waveform video from audio"
         }

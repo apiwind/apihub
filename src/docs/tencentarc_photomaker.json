@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/tencentarc/photomaker", 
             "name": "tencentarc_photomaker", 
             "description": "Create photos, paintings and avatars for anyone in any style within seconds."
         }

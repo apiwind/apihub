@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/adirik/styletts2", 
             "name": "adirik_styletts2", 
             "description": "Generates speech from text"
         }

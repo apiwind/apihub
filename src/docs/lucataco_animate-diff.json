@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/lucataco/animate-diff", 
             "name": "lucataco_animate-diff", 
             "description": "Animate Your Personalized Text-to-Image Diffusion Models"
         }

@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/meta/musicgen", 
             "name": "meta_musicgen", 
             "description": "Generate music from a prompt or melody"
         }

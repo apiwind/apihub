@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/salesforce/blip", 
             "name": "salesforce_blip", 
             "description": "Bootstrapping Language-Image Pre-training"
         }

@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/yorickvp/llava-13b", 
             "name": "yorickvp_llava-13b", 
             "description": "Visual instruction tuning towards large language and vision models with GPT-4 level capabilities"
         }

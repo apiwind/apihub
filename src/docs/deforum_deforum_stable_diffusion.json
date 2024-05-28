@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/deforum/deforum_stable_diffusion", 
             "name": "deforum_deforum_stable_diffusion", 
             "description": "Animating prompts with stable diffusion"
         }

@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/andreasjansson/stable-diffusion-animation", 
             "name": "andreasjansson_stable-diffusion-animation", 
             "description": "Animate Stable Diffusion by interpolating between two prompts"
         }

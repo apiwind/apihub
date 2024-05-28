@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://rapidapi.com/benrhzala90/api/youtube-transcriptor/",
             "name": "Youtube transcriptor", 
             "description": "Transcript Youtube Podcasts & videos.  "
         }

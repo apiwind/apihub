@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://rapidapi.com/pmtech/api/validect-email-verification/",
             "name": "Validect - Email Verification", 
             "description": "Verify existence of specified email address using Validect API  "
         }

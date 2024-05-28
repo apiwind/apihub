@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/lucataco/nsfw_image_detection", 
             "name": "lucataco_nsfw_image_detection", 
             "description": "Falcons.ai Fine-Tuned Vision Transformer (ViT) for NSFW Image Classification"
         }

@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/openai/whisper", 
             "name": "openai_whisper", 
             "description": "Convert speech in audio to text"
         }

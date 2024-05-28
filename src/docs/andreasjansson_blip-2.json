@@ -1,6 +1,7 @@
 {
     "info": {
         "us": {
+            "sourceLink": "https://replicate.com/andreasjansson/blip-2", 
             "name": "andreasjansson_blip-2", 
             "description": "Answers questions about images"
         }
