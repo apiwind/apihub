@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/cjwbw/rembg", 
-            "name": "chenxwh_rembg", 
-            "description": "Remove images background"
+            "sourceLink": "https://replicate.com/cjwbw/rembg",
+            "name": "chenxwh_rembg",
+            "description": "Remove images background",
+            "category": {
+                "Image Processing": [
+                    "Edit images"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "chenxwh_rembg.json"
 }

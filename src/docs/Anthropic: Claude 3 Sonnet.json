@@ -1,14 +1,17 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-sonnet", 
+            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-sonnet",
             "price": {
-                "input": "$3", 
+                "input": "$3",
                 "output": "$15"
-            }, 
-            "name": "Anthropic: Claude 3 Sonnet", 
-            "description": "Claude 3 Sonnet is an ideal balance of intelligence and speed for enterprise workloads. Maximum utility at a lower price, dependable, balanced for scaled deployments.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal"
+            },
+            "name": "Anthropic: Claude 3 Sonnet",
+            "description": "Claude 3 Sonnet is an ideal balance of intelligence and speed for enterprise workloads. Maximum utility at a lower price, dependable, balanced for scaled deployments.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "Anthropic: Claude 3 Sonnet.json"
 }

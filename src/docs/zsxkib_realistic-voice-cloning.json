@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/zsxkib/realistic-voice-cloning", 
-            "name": "zsxkib_realistic-voice-cloning", 
-            "description": "Create song covers with any RVC v2 trained AI voice from audio files."
+            "sourceLink": "https://replicate.com/zsxkib/realistic-voice-cloning",
+            "name": "zsxkib_realistic-voice-cloning",
+            "description": "Create song covers with any RVC v2 trained AI voice from audio files.",
+            "category": {
+                "Audio Processing": [
+                    "Generate music"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "zsxkib_realistic-voice-cloning.json"
 }

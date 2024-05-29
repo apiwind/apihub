@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/andreasjansson/blip-2", 
-            "name": "andreasjansson_blip-2", 
-            "description": "Answers questions about images"
+            "sourceLink": "https://replicate.com/andreasjansson/blip-2",
+            "name": "andreasjansson_blip-2",
+            "description": "Answers questions about images",
+            "category": {
+                "Image Processing": [
+                    "Chat with images"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "andreasjansson_blip-2.json"
 }

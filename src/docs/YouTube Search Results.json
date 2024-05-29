@@ -2,9 +2,12 @@
     "info": {
         "us": {
             "sourceLink": "https://rapidapi.com/marindelija/api/youtube-search-results/",
-            "name": "YouTube Search Results", 
-            "description": "Fetch the YouTube Search Results and the information for each item for a specific search term, without any limits! You can find out more about the API and its usage here: https://userlip.github.io/Docs/#/youtube-search/requests  "
+            "name": "YouTube Search Results",
+            "description": "Fetch the YouTube Search Results and the information for each item for a specific search term, without any limits! You can find out more about the API and its usage here: https://userlip.github.io/Docs/#/youtube-search/requests  ",
+            "category": {
+                "Search": []
+            }
         }
-    }, 
+    },
     "openapi": "YouTube Search Results.json"
 }

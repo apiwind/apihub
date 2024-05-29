@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/fofr/become-image", 
-            "name": "fofr_become-image", 
-            "description": "Adapt any picture of a face into another image"
+            "sourceLink": "https://replicate.com/fofr/become-image",
+            "name": "fofr_become-image",
+            "description": "Adapt any picture of a face into another image",
+            "category": {
+                "Image Processing": [
+                    "Edit images"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "fofr_become-image.json"
 }

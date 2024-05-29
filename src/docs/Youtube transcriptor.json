@@ -2,9 +2,14 @@
     "info": {
         "us": {
             "sourceLink": "https://rapidapi.com/benrhzala90/api/youtube-transcriptor/",
-            "name": "Youtube transcriptor", 
-            "description": "Transcript Youtube Podcasts & videos.  "
+            "name": "Youtube transcriptor",
+            "description": "Transcript Youtube Podcasts & videos.  ",
+            "category": {
+                "Video Processing": [
+                    "Others"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "Youtube transcriptor.json"
 }

@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/fofr/audio-to-waveform", 
-            "name": "fofr_audio-to-waveform", 
-            "description": "Create a waveform video from audio"
+            "sourceLink": "https://replicate.com/fofr/audio-to-waveform",
+            "name": "fofr_audio-to-waveform",
+            "description": "Create a waveform video from audio",
+            "category": {
+                "Video Processing": [
+                    "Others"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "fofr_audio-to-waveform.json"
 }

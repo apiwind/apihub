@@ -1,14 +1,17 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://openrouter.ai/models/gryphe/mythomax-l2-13b", 
+            "sourceLink": "https://openrouter.ai/models/gryphe/mythomax-l2-13b",
             "price": {
-                "input": "$0.13", 
+                "input": "$0.13",
                 "output": "$0.13"
-            }, 
-            "name": "MythoMax 13B", 
-            "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge"
+            },
+            "name": "MythoMax 13B",
+            "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "MythoMax 13B.json"
 }

@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/daanelson/minigpt-4", 
-            "name": "daanelson_minigpt-4", 
-            "description": "A model which generates text in response to an input image and prompt."
+            "sourceLink": "https://replicate.com/daanelson/minigpt-4",
+            "name": "daanelson_minigpt-4",
+            "description": "A model which generates text in response to an input image and prompt.",
+            "category": {
+                "Image Processing": [
+                    "Caption images"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "daanelson_minigpt-4.json"
 }

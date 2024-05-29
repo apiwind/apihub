@@ -1,14 +1,17 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-opus", 
+            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-opus",
             "price": {
-                "input": "$15", 
+                "input": "$15",
                 "output": "$75"
-            }, 
-            "name": "Anthropic: Claude 3 Opus", 
-            "description": "Claude 3 Opus is Anthropic's most powerful model for highly complex tasks. It boasts top-level performance, intelligence, fluency, and understanding.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal"
+            },
+            "name": "Anthropic: Claude 3 Opus",
+            "description": "Claude 3 Opus is Anthropic's most powerful model for highly complex tasks. It boasts top-level performance, intelligence, fluency, and understanding.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "Anthropic: Claude 3 Opus.json"
 }

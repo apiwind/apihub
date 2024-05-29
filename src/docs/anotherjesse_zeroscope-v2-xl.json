@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/anotherjesse/zeroscope-v2-xl", 
-            "name": "anotherjesse_zeroscope-v2-xl", 
-            "description": "Zeroscope V2 XL & 576w"
+            "sourceLink": "https://replicate.com/anotherjesse/zeroscope-v2-xl",
+            "name": "anotherjesse_zeroscope-v2-xl",
+            "description": "Zeroscope V2 XL & 576w",
+            "category": {
+                "Video Processing": [
+                    "Generate videos"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "anotherjesse_zeroscope-v2-xl.json"
 }

@@ -1,14 +1,17 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://openrouter.ai/models/gryphe/mythomax-l2-13b:nitro", 
+            "sourceLink": "https://openrouter.ai/models/gryphe/mythomax-l2-13b:nitro",
             "price": {
-                "input": "$0.2", 
+                "input": "$0.2",
                 "output": "$0.2"
-            }, 
-            "name": "MythoMax 13B (nitro)Nitro variant", 
-            "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge\nNote: this is a higher-throughput version of [this model](/models/gryphe/mythomax-l2-13b), and may have higher prices and slightly different outputs."
+            },
+            "name": "MythoMax 13B (nitro)Nitro variant",
+            "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge\nNote: this is a higher-throughput version of [this model](/models/gryphe/mythomax-l2-13b), and may have higher prices and slightly different outputs.",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "MythoMax 13B (nitro)Nitro variant.json"
 }

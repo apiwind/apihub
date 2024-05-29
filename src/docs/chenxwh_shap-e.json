@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/cjwbw/shap-e", 
-            "name": "chenxwh_shap-e", 
-            "description": "Generating Conditional 3D Implicit Functions"
+            "sourceLink": "https://replicate.com/cjwbw/shap-e",
+            "name": "chenxwh_shap-e",
+            "description": "Generating Conditional 3D Implicit Functions",
+            "category": {
+                "Tool": [
+                    "Others"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "chenxwh_shap-e.json"
 }

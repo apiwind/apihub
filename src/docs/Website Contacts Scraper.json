@@ -2,9 +2,14 @@
     "info": {
         "us": {
             "sourceLink": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/website-contacts-scraper/",
-            "name": "Website Contacts Scraper", 
-            "description": "Lightning Fast Scraping of Emails, Phone Numbers, and Social Links (Facebook, TikTok, Instagram, Twitter, LinkedIn and others) from a Website in Real-Time. Easy-to-use and Scalable API to scrape and extract email addresses, phone numbers and profile links on all major social platforms - Facebook, Instagram, TikTok, Twitter, LinkedIn, Youtube, Snapchat, Pinterest and GitHub from a website domain in real-time. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  "
+            "name": "Website Contacts Scraper",
+            "description": "Lightning Fast Scraping of Emails, Phone Numbers, and Social Links (Facebook, TikTok, Instagram, Twitter, LinkedIn and others) from a Website in Real-Time. Easy-to-use and Scalable API to scrape and extract email addresses, phone numbers and profile links on all major social platforms - Facebook, Instagram, TikTok, Twitter, LinkedIn, Youtube, Snapchat, Pinterest and GitHub from a website domain in real-time. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  ",
+            "category": {
+                "Tool": [
+                    "Others"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "Website Contacts Scraper.json"
 }

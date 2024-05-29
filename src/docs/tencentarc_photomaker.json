@@ -1,10 +1,16 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/tencentarc/photomaker", 
-            "name": "tencentarc_photomaker", 
-            "description": "Create photos, paintings and avatars for anyone in any style within seconds."
+            "sourceLink": "https://replicate.com/tencentarc/photomaker",
+            "name": "tencentarc_photomaker",
+            "description": "Create photos, paintings and avatars for anyone in any style within seconds.",
+            "category": {
+                "Image Processing": [
+                    "Generate images",
+                    "Edit images"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "tencentarc_photomaker.json"
 }

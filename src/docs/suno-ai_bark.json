@@ -1,10 +1,15 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/suno-ai/bark", 
-            "name": "suno-ai_bark", 
-            "description": "\ud83d\udd0a Text-Prompted Generative Audio Model"
+            "sourceLink": "https://replicate.com/suno-ai/bark",
+            "name": "suno-ai_bark",
+            "description": "\ud83d\udd0a Text-Prompted Generative Audio Model",
+            "category": {
+                "Audio Processing": [
+                    "Generate speech"
+                ]
+            }
         }
-    }, 
+    },
     "openapi": "suno-ai_bark.json"
 }

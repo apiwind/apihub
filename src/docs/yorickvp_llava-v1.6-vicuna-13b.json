@@ -1,10 +1,13 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/yorickvp/llava-v1.6-vicuna-13b", 
-            "name": "yorickvp_llava-v1.6-vicuna-13b", 
-            "description": "LLaVA v1.6: Large Language and Vision Assistant (Vicuna-13B)"
+            "sourceLink": "https://replicate.com/yorickvp/llava-v1.6-vicuna-13b",
+            "name": "yorickvp_llava-v1.6-vicuna-13b",
+            "description": "LLaVA v1.6: Large Language and Vision Assistant (Vicuna-13B)",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "yorickvp_llava-v1.6-vicuna-13b.json"
 }

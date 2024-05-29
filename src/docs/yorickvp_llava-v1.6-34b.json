@@ -1,10 +1,13 @@
 {
     "info": {
         "us": {
-            "sourceLink": "https://replicate.com/yorickvp/llava-v1.6-34b", 
-            "name": "yorickvp_llava-v1.6-34b", 
-            "description": "LLaVA v1.6: Large Language and Vision Assistant (Nous-Hermes-2-34B)"
+            "sourceLink": "https://replicate.com/yorickvp/llava-v1.6-34b",
+            "name": "yorickvp_llava-v1.6-34b",
+            "description": "LLaVA v1.6: Large Language and Vision Assistant (Nous-Hermes-2-34B)",
+            "category": {
+                "LLM": []
+            }
         }
-    }, 
+    },
     "openapi": "yorickvp_llava-v1.6-34b.json"
 }
