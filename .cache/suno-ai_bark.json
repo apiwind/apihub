@@ -1,0 +1,1 @@
+{"openapi":"suno-ai_bark.json","apidocs":"","openapi_json":null,"info":{"us":{"name":"suno-ai_bark","description":"🔊 Text-Prompted Generative Audio Model","info":{"about":"","case":null},"sourcelink":"https://replicate.com/suno-ai/bark","price":{"input":"","output":""},"category":{"Audio Processing":["Generate speech"]}}}}
