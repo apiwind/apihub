@@ -1,0 +1,440 @@
+{
+    "paths": {
+        "/translate/": {
+            "post": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "Return Translated Text and the source language if it wasn't specified. ",
+                "parameters": [
+                    {
+                        "description": "Title: Text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "text",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "Title: Dest. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "dest",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "Title: Src, Default: auto. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "src",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Return Translated Text and the source language if it wasn't specified. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "original_text": {
+                                    "type": "string"
+                                },
+                                "translated_text": {
+                                    "type": "string"
+                                },
+                                "destination_language": {
+                                    "type": "string"
+                                },
+                                "original_language": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "Return Translated Text and the source language if it wasn't specified. ",
+                "parameters": [
+                    {
+                        "description": "Title: Dest. text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "dest",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "REQUIRED. Title: Text. Title: Src, Default: auto. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "STRING",
+                        "schema": {
+                            "type": ""
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Return Translated Text and the source language if it wasn't specified. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "title": "Google",
+                            "required": [
+                                "original_text"
+                            ],
+                            "type": "object",
+                            "description": "Schema Class for Google Translate Result",
+                            "properties": {
+                                "original_text": {
+                                    "title": "Original Text",
+                                    "type": "string"
+                                },
+                                "translated_text": {
+                                    "title": "Translated Text",
+                                    "type": "string"
+                                },
+                                "destination_language": {
+                                    "title": "Destination Language",
+                                    "type": "string"
+                                },
+                                "original_language": {
+                                    "title": "Original Language",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/detect/accurate": {
+            "post": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "This endpoint will return the Language of the Text. ",
+                "parameters": [
+                    {
+                        "description": "Title: Text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "text",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "This endpoint will return the Language of the Text. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "title": "WhatLang",
+                            "required": [
+                                "lang",
+                                "confidence",
+                                "script",
+                                "is_reliable"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "lang": {
+                                    "title": "Lang",
+                                    "type": "string"
+                                },
+                                "confidence": {
+                                    "title": "Confidence",
+                                    "type": "number"
+                                },
+                                "script": {
+                                    "title": "Script",
+                                    "type": "string"
+                                },
+                                "is_reliable": {
+                                    "title": "Is Reliable",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "This endpoint will return the Language of the Text. ",
+                "parameters": [
+                    {
+                        "description": "Title: Text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "text",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "This endpoint will return the Language of the Text. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "title": "WhatLang",
+                            "required": [
+                                "lang",
+                                "confidence",
+                                "script",
+                                "is_reliable"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "lang": {
+                                    "title": "Lang",
+                                    "type": "string"
+                                },
+                                "confidence": {
+                                    "title": "Confidence",
+                                    "type": "number"
+                                },
+                                "script": {
+                                    "title": "Script",
+                                    "type": "string"
+                                },
+                                "is_reliable": {
+                                    "title": "Is Reliable",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/detect/fast": {
+            "post": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "This endpoint will return the Language of the Text. ",
+                "parameters": [
+                    {
+                        "description": "Title: Text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "text",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "This endpoint will return the Language of the Text. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "title": "WhatLang",
+                            "required": [
+                                "lang",
+                                "confidence",
+                                "script",
+                                "is_reliable"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "lang": {
+                                    "title": "Lang",
+                                    "type": "string"
+                                },
+                                "confidence": {
+                                    "title": "Confidence",
+                                    "type": "number"
+                                },
+                                "script": {
+                                    "title": "Script",
+                                    "type": "string"
+                                },
+                                "is_reliable": {
+                                    "title": "Is Reliable",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "servers": [
+                    "translate287.p.rapidapi.com"
+                ],
+                "description": "This endpoint will return the Language of the Text. ",
+                "parameters": [
+                    {
+                        "description": "Title: Text. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "text",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "translate287.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "This endpoint will return the Language of the Text. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "title": "WhatLang",
+                            "required": [
+                                "lang",
+                                "confidence",
+                                "script",
+                                "is_reliable"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "lang": {
+                                    "title": "Lang",
+                                    "type": "string"
+                                },
+                                "confidence": {
+                                    "title": "Confidence",
+                                    "type": "number"
+                                },
+                                "script": {
+                                    "title": "Script",
+                                    "type": "string"
+                                },
+                                "is_reliable": {
+                                    "title": "Is Reliable",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "name": "Translate",
+    "description": "Easy and reliable Machine Translation and Language Detection   "
+}

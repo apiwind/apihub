@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/rossjillian/controlnet",
+            "name": "rossjillian_controlnet",
+            "description": "Control diffusion models",
+            "category": {
+                "Tool": [
+                    "Others"
+                ]
+            }
+        }
+    },
+    "openapi": "rossjillian_controlnet.json"
+}

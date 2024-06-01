@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/afiaka87/tortoise-tts",
+            "name": "afiaka87_tortoise-tts",
+            "description": "Generate speech from text, clone voices from mp3 files. From James Betker AKA \"neonbjb\".",
+            "category": {
+                "Audio Processing": [
+                    "Generate speech"
+                ]
+            }
+        }
+    },
+    "openapi": "afiaka87_tortoise-tts.json"
+}

@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-news-data/",
+            "name": "Real-Time News Data",
+            "description": "Get Top News Globally, per Topic or Search Local News from Google News in Real-Time. Use this API to get the top news globally or per topic and search for news by query and geographic area. Powered by Google News. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  ",
+            "category": {
+                "Knowledge and Info": [
+                    "News"
+                ]
+            }
+        }
+    },
+    "openapi": "Real-Time News Data.json"
+}

@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates/",
+            "name": "Currency Conversion and Exchange Rates",
+            "description": "The Currency Conversion and Exchange Rates API provides quick and easy access to currency conversion. Implement this into your application to do localized currency, exchange rates, and more!   ",
+            "category": {
+                "Knowledge and Info": [
+                    "Finance"
+                ]
+            }
+        }
+    },
+    "openapi": "Currency Conversion and Exchange Rates.json"
+}

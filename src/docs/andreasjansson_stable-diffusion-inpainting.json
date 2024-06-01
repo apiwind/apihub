@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/andreasjansson/stable-diffusion-inpainting",
+            "name": "andreasjansson_stable-diffusion-inpainting",
+            "description": "Inpainting using RunwayML's stable-diffusion-inpainting checkpoint",
+            "category": {
+                "Image Processing": [
+                    "Edit images"
+                ]
+            }
+        }
+    },
+    "openapi": "andreasjansson_stable-diffusion-inpainting.json"
+}

@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/cjwbw/damo-text-to-video",
+            "name": "chenxwh_damo-text-to-video",
+            "description": "Multi-stage text-to-video generation",
+            "category": {
+                "Video Processing": [
+                    "Generate videos"
+                ]
+            }
+        }
+    },
+    "openapi": "chenxwh_damo-text-to-video.json"
+}

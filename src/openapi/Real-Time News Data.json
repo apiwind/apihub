@@ -1,0 +1,437 @@
+{
+    "paths": {
+        "/topic-headlines": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Get the latest news headlines for a topic.. ",
+                "parameters": [
+                    {
+                        "description": "Topic for which to get news headlines. Available topic: WORLD, NATIONAL, BUSINESS, TECHNOLOGY, ENTERTAINMENT, SPORTS, SCIENCE, HEALTH. In addition, topic IDs are also accepted and can be taken from a News topic URL as it appears after the topics/ path part (e.g. Football Topic - /topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNREoyZURRU0JXVnVMVWRDS0FBUAE). ",
+                        "required": true,
+                        "in": "query",
+                        "name": "topic",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "US. OPTIONAL. Country code. See all available country codes. Default: US. The language to use for the results, specified as a 2-letter language code - see ISO 639-1 alpha-2. Default: en. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Get the latest news headlines for a topic.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/top-headlines": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Get the latest news headlines/top stories for a country.. ",
+                "parameters": [
+                    {
+                        "description": "US. OPTIONAL. Country code. See all available country codes. Default: US. The language to use for the results, specified as a 2-letter language code - see ISO 639-1 alpha-2. Default: en. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Get the latest news headlines/top stories for a country.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/language-list": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Get valid languages for a country code, to be used with all other APIs.. ",
+                "parameters": [
+                    {
+                        "description": "Country code of the country to get languages for. See all available country codes.. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Get valid languages for a country code, to be used with all other APIs.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "lang": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/local-headlines": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Get local, geo based headlines. ",
+                "parameters": [
+                    {
+                        "description": "Area, city or country to fetch news for (e.g. London).. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "query",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "US. OPTIONAL. Country code. See all available country codes. Default: US. The language to use for the results, specified as a 2-letter language code - see ISO 639-1 alpha-2. Default: en. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Get local, geo based headlines. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/topic-news-by-section": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Get topic news article in a specific section.. ",
+                "parameters": [
+                    {
+                        "description": "Topic for which to get news headlines. Available topic: WORLD, NATIONAL, BUSINESS, TECHNOLOGY, ENTERTAINMENT, SPORTS, SCIENCE, HEALTH. In addition, topic IDs are also accepted and can be taken from a News topic URL as it appears after the topics/ path part (e.g. Football Topic - /topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNREoyZURRU0JXVnVMVWRDS0FBUAE). ",
+                        "required": true,
+                        "in": "query",
+                        "name": "topic",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "Section, eg: CAQiW0NCQVNQZ29JTDIwdk1EZGpNWFlTQW1WdUdnSlZVeUlQQ0FRYUN3b0pMMjB2TURKdFpqRnVLaGtLRndvVFIwRkVSMFZVWDFORlExUkpUMDVmVGtGTlJTQUJLQUEqKggAKiYICiIgQ0JBU0Vnb0lMMjB2TURkak1YWVNBbVZ1R2dKVlV5Z0FQAVAB. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "section",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "US. OPTIONAL. Country code. See all available country codes. Default: US. The language to use for the results, specified as a 2-letter language code - see ISO 639-1 alpha-2. Default: en. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Get topic news article in a specific section.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search": {
+            "get": {
+                "servers": [
+                    "real-time-news-data.p.rapidapi.com"
+                ],
+                "description": "Search news articles by query with an option to limit the results to a specific time range.. ",
+                "parameters": [
+                    {
+                        "description": "Search query for which to get news.. ",
+                        "required": true,
+                        "in": "query",
+                        "name": "query",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "Country code. See all available country codes. Default: US. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "country",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "The language to use for the results, specified as a 2-letter language code - see ISO 639-1 alpha-2. Default: en. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "lang",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    },
+                    {
+                        "description": "OPTIONAL. Find news articles published in a specific time range. Default: anytime. Domain of the source from which to return news articles (e.g. cnn.com).. ",
+                        "required": false,
+                        "in": "query",
+                        "name": "time_published",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Key",
+                        "value": "SIGN-UP-FOR-KEY",
+                        "schema": {
+                            "type": "ENUM"
+                        }
+                    },
+                    {
+                        "required": true,
+                        "in": "header",
+                        "name": "X-RapidAPI-Host",
+                        "value": "real-time-news-data.p.rapidapi.com",
+                        "schema": {
+                            "type": "STRING"
+                        }
+                    }
+                ],
+                "summary": "Search news articles by query with an option to limit the results to a specific time range.. ",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "request_id": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "name": "Real-Time News Data",
+    "description": "Get Top News Globally, per Topic or Search Local News from Google News in Real-Time. Use this API to get the top news globally or per topic and search for news by query and geographic area. Powered by Google News. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  "
+}

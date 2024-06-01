@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/methexis-inc/img2prompt",
+            "name": "methexis-inc_img2prompt",
+            "description": "Get an approximate text prompt, with style, matching an image. (Optimized for stable-diffusion (clip ViT-L/14))",
+            "category": {
+                "Image Processing": [
+                    "Others"
+                ]
+            }
+        }
+    },
+    "openapi": "methexis-inc_img2prompt.json"
+}

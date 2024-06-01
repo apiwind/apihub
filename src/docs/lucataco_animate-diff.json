@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/lucataco/animate-diff",
+            "name": "lucataco_animate-diff",
+            "description": "Animate Your Personalized Text-to-Image Diffusion Models",
+            "category": {
+                "Image Processing": [
+                    "Generate images"
+                ]
+            }
+        }
+    },
+    "openapi": "lucataco_animate-diff.json"
+}
