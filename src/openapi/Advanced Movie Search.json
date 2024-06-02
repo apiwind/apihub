@@ -1,187 +1,196 @@
 {
+    "info": {
+        "version": "1.0.0", 
+        "description": "Search for movies via advanced queries like genre, name, etc. And get all their details  ", 
+        "title": "Advanced Movie Search"
+    }, 
     "paths": {
         "/genre/movie/list": {
             "get": {
-                "servers": [
-                    "advanced-movie-search.p.rapidapi.com"
-                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {}
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get list of all available genres. ", 
                 "description": "Get list of all available genres. ", 
                 "parameters": [
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: advanced-movie-search.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "advanced-movie-search.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
-                ], 
-                "summary": "Get list of all available genres. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    }
-                }
+                ]
             }
         }, 
         "/search/movie": {
             "get": {
-                "servers": [
-                    "advanced-movie-search.p.rapidapi.com"
-                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {}
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search a movie by query string. ", 
                 "description": "Search a movie by query string. ", 
                 "parameters": [
                     {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
                         "description": "Eg, kong. ", 
-                        "required": true, 
-                        "in": "query", 
                         "name": "query", 
-                        "schema": {
-                            "type": "STRING"
-                        }
+                        "in": "query"
                     }, 
                     {
-                        "description": "Eg, 1. ", 
+                        "schema": {
+                            "type": "number"
+                        }, 
                         "required": false, 
-                        "in": "query", 
+                        "description": "Eg, 1. ", 
                         "name": "page", 
-                        "schema": {
-                            "type": "NUMBER"
-                        }
+                        "in": "query"
                     }, 
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: advanced-movie-search.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "advanced-movie-search.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
-                ], 
-                "summary": "Search a movie by query string. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    }
-                }
+                ]
             }
         }, 
         "/discover/movie": {
             "get": {
-                "servers": [
-                    "advanced-movie-search.p.rapidapi.com"
-                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {}
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Discover movies by Genre. ", 
                 "description": "Discover movies by Genre. ", 
                 "parameters": [
                     {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
                         "description": "Eg, 80. ", 
-                        "required": false, 
-                        "in": "query", 
                         "name": "with_genres", 
-                        "schema": {
-                            "type": "STRING"
-                        }
+                        "in": "query"
                     }, 
                     {
-                        "description": "Eg, 1. ", 
+                        "schema": {
+                            "type": "number"
+                        }, 
                         "required": false, 
-                        "in": "query", 
+                        "description": "Eg, 1. ", 
                         "name": "page", 
-                        "schema": {
-                            "type": "NUMBER"
-                        }
+                        "in": "query"
                     }, 
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: advanced-movie-search.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "advanced-movie-search.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
-                ], 
-                "summary": "Discover movies by Genre. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    }
-                }
+                ]
             }
         }, 
         "/movies/getdetails": {
             "get": {
-                "servers": [
-                    "advanced-movie-search.p.rapidapi.com"
-                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {}
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get detailed response for a movie ID. ", 
                 "description": "Get detailed response for a movie ID. ", 
                 "parameters": [
                     {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
                         "description": "Eg, 399566. ", 
-                        "required": true, 
-                        "in": "query", 
                         "name": "movie_id", 
-                        "schema": {
-                            "type": "NUMBER"
-                        }
+                        "in": "query"
                     }, 
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: advanced-movie-search.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "advanced-movie-search.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
-                ], 
-                "summary": "Get detailed response for a movie ID. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    }
-                }
+                ]
             }
         }
     }, 
-    "name": "Advanced Movie Search", 
-    "description": "Search for movies via advanced queries like genre, name, etc. And get all their details  "
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "advanced-movie-search.p.rapidapi.com"
+        }
+    ]
 }

@@ -1,112 +1,74 @@
 {
+    "info": {
+        "version": "1.0.0", 
+        "description": "Transcript Youtube Podcasts & videos.  ", 
+        "title": "Youtube transcriptor"
+    }, 
     "paths": {
-        "transcript": {
+        "/transcript": {
             "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
                 "description": "Transcript videos. ", 
                 "parameters": [
                     {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
                         "description": "Example : youtube.com/watch?v=0-fD8SDEvrR. ", 
-                        "required": true, 
-                        "in": "query", 
                         "name": "video_id", 
-                        "schema": {
-                            "type": "STRING"
-                        }
+                        "in": "query"
                     }, 
                     {
-                        "description": "auto detect language if none provided.. ", 
+                        "schema": {
+                            "type": "string"
+                        }, 
                         "required": false, 
-                        "in": "query", 
+                        "description": "auto detect language if none provided.. ", 
                         "name": "lang", 
-                        "schema": {
-                            "type": "STRING"
-                        }
+                        "in": "query"
                     }, 
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: youtube-transcriptor.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "youtube-transcriptor.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
                 ], 
-                "summary": "Transcript videos. ",
-                "servers": ["youtube-transcriptor.p.rapidapi.com"],
-                "responses": {
-                    "200": {
-                        "schema": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "title": {
-                                "type": "string"
-                              },
-                              "description": {
-                                "type": "string"
-                              },
-                              "availableLangs": {
-                                "type": "array",
-                                "items": {
-                                  "type": "string"
-                                }
-                              },
-                              "lengthInSeconds": {
-                                "type": "string"
-                              },
-                              "thumbnails": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "url": {
-                                      "type": "string"
-                                    },
-                                    "width": {
-                                      "type": "integer"
-                                    },
-                                    "height": {
-                                      "type": "integer"
-                                    }
-                                  }
-                                }
-                              },
-                              "transcription": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "subtitle": {
-                                      "type": "string"
-                                    },
-                                    "start": {
-                                      "type": "number"
-                                    },
-                                    "dur": {
-                                      "type": "number"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                    }
-                }
+                "summary": "Transcript videos. "
             }
         }
     }, 
-    "name": "Youtube transcriptor", 
-    "description": "Transcript Youtube Podcasts & videos.  "
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "youtube-transcriptor.p.rapidapi.com"
+        }
+    ]
 }
