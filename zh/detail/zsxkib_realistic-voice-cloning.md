@@ -1,6 +1,6 @@
 # zsxkib_realistic-voice-cloning
 
-使用任何经过RVC v2训练的人工智能语音从音频文件中创建歌曲翻唱。
+使用来自音频文件的任何RVC v2训练过的AI语音创建歌曲翻唱。
 
 官网: [https://replicate.com/zsxkib/realistic-voice-cloning](https://replicate.com/zsxkib/realistic-voice-cloning)
 

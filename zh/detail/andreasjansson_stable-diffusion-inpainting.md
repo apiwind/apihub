@@ -1,6 +1,6 @@
 # andreasjansson_stable-diffusion-inpainting
 
-使用RunwayML的stable-diffusion-inpainting检查点进行修复
+RunwayML的稳定扩散修复检查点
 
 官网: [https://replicate.com/andreasjansson/stable-diffusion-inpainting](https://replicate.com/andreasjansson/stable-diffusion-inpainting)
 

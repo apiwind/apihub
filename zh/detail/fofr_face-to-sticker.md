@@ -1,6 +1,6 @@
 # fofr_face-to-sticker
 
-将一个脸变成贴纸
+将面部变成贴纸
 
 官网: [https://replicate.com/fofr/face-to-sticker](https://replicate.com/fofr/face-to-sticker)
 

@@ -1,6 +1,6 @@
 # Translate
 
-易用且可靠的机器翻译和语言检测
+易用可靠的机器翻译和语言检测
 
 官网: [https://rapidapi.com/omarmhaimdat/api/translate287/](https://rapidapi.com/omarmhaimdat/api/translate287/)
 

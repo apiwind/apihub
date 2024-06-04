@@ -1,6 +1,6 @@
 # zsxkib_instant-id
 
-立即制作逼真的真人图像
+立即制作真实人物的逼真图像
 
 官网: [https://replicate.com/zsxkib/instant-id](https://replicate.com/zsxkib/instant-id)
 

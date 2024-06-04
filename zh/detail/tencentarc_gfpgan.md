@@ -1,6 +1,6 @@
 # tencentarc_gfpgan
 
-老照片
+我们
 
 官网: [https://replicate.com/tencentarc/gfpgan](https://replicate.com/tencentarc/gfpgan)
 

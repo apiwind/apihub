@@ -1,6 +1,6 @@
 # Validect - Email Verification
 
-验证指定电子邮件地址的存在性使用Validect API
+验证指定电子邮件地址的存在性，使用Validect API
 
 官网: [https://rapidapi.com/pmtech/api/validect-email-verification/](https://rapidapi.com/pmtech/api/validect-email-verification/)
 

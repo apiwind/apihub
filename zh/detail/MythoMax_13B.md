@@ -1,6 +1,6 @@
 # MythoMax 13B
 
-Llama 2 13B中性能最出色且最受欢迎的细致调整之一，具有丰富的描述和角色扮演。#合并
+Llama 2 13B中最性能最好，最受欢迎的细节调整之一，带有丰富的描述和角色扮演。 #merge
 
 官网: [https://openrouter.ai/models/gryphe/mythomax-l2-13b](https://openrouter.ai/models/gryphe/mythomax-l2-13b)
 

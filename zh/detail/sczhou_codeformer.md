@@ -1,6 +1,6 @@
 # sczhou_codeformer
 
-老照片的强大面部修复算法 / 由人工智能生成的面孔
+用于老照片的强健面部修复算法 / 人工智能生成的面孔
 
 官网: [https://replicate.com/sczhou/codeformer](https://replicate.com/sczhou/codeformer)
 

@@ -1,6 +1,6 @@
 # lucataco_animate-diff
 
-将您的个性化文本到图像扩散模型制作成动画
+个性化文本到图像扩散模型动画化
 
 官网: [https://replicate.com/lucataco/animate-diff](https://replicate.com/lucataco/animate-diff)
 

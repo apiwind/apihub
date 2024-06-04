@@ -1,6 +1,6 @@
 # methexis-inc_img2prompt
 
-我们
+获取与图像相匹配的样式大致文本提示。（优化为稳定扩散（剪辑ViT-L/14））
 
 官网: [https://replicate.com/methexis-inc/img2prompt](https://replicate.com/methexis-inc/img2prompt)
 

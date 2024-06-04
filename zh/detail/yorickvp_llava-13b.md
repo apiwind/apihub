@@ -1,6 +1,6 @@
 # yorickvp_llava-13b
 
-通过GPT-4级别的能力对大型语言和视觉模型进行视觉指导调整
+使用GPT-4级别能力调整面向大语言和视觉模型的视觉指导
 
 官网: [https://replicate.com/yorickvp/llava-13b](https://replicate.com/yorickvp/llava-13b)
 

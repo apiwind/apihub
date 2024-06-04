@@ -1,6 +1,6 @@
 # Real-Time News Data
 
-全球
+我们
 
 官网: [https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-news-data/](https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-news-data/)
 

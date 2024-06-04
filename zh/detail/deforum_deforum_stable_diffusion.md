@@ -1,6 +1,6 @@
 # deforum_deforum_stable_diffusion
 
-使用稳定扩散制作动画提示
+使用稳定扩散动画提示
 
 官网: [https://replicate.com/deforum/deforum_stable_diffusion](https://replicate.com/deforum/deforum_stable_diffusion)
 

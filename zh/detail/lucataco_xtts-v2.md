@@ -1,6 +1,6 @@
 # lucataco_xtts-v2
 
-Coqui XTTS-v2：多语种文本到语音声音克隆
+Coqui XTTS-v2: 多语言文本转语音声音克隆
 
 官网: [https://replicate.com/lucataco/xtts-v2](https://replicate.com/lucataco/xtts-v2)
 

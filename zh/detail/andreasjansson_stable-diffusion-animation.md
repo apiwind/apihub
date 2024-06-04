@@ -1,6 +1,6 @@
 # andreasjansson_stable-diffusion-animation
 
-通过在两个提示之间进行插值来动画稳定扩散
+通过在两个提示之间插值来创建稳定扩散的动画
 
 官网: [https://replicate.com/andreasjansson/stable-diffusion-animation](https://replicate.com/andreasjansson/stable-diffusion-animation)
 

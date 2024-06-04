@@ -1,6 +1,6 @@
 # lucataco_nsfw_image_detection
 
-Falcons.ai为不安全图片分类Fine-Tuned Vision Transformer (ViT)
+不宜观看的图像分类
 
 官网: [https://replicate.com/lucataco/nsfw_image_detection](https://replicate.com/lucataco/nsfw_image_detection)
 
