@@ -1,6 +1,6 @@
 # andreasjansson_clip-features
 
-clip-vit-large-patch14模型的CLIP特征
+为clip-vit-large-patch14模型返回CLIP特征
 
 官网: [https://replicate.com/andreasjansson/clip-features](https://replicate.com/andreasjansson/clip-features)
 

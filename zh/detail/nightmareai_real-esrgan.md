@@ -1,6 +1,6 @@
 # nightmareai_real-esrgan
 
-可选人脸校正和可调整放大的Real-ESRGAN
+可以选择进行面部校正和可调整放大比例的Real-ESRGAN
 
 官网: [https://replicate.com/nightmareai/real-esrgan](https://replicate.com/nightmareai/real-esrgan)
 

@@ -1,6 +1,6 @@
 # Youtube transcriptor
 
-转录 YouTube 播客和视频。
+转录 YouTube 网络节目和视频。
 
 官网: [https://rapidapi.com/benrhzala90/api/youtube-transcriptor/](https://rapidapi.com/benrhzala90/api/youtube-transcriptor/)
 

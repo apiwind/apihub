@@ -1,6 +1,6 @@
 # andreasjansson_blip-2
 
-回答关于图像的问题
+回答有关图片的问题
 
 官网: [https://replicate.com/andreasjansson/blip-2](https://replicate.com/andreasjansson/blip-2)
 

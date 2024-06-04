@@ -1,6 +1,6 @@
 # suno-ai_bark
 
-🔊 文本提示的生成音频模型
+🔊 文本提示的生成式音频模型
 
 官网: [https://replicate.com/suno-ai/bark](https://replicate.com/suno-ai/bark)
 

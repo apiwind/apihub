@@ -1,6 +1,6 @@
 # salesforce_blip
 
-语言-图像预训练引导
+我们
 
 官网: [https://replicate.com/salesforce/blip](https://replicate.com/salesforce/blip)
 

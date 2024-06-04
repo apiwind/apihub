@@ -1,6 +1,6 @@
 # fofr_face-to-many
 
-我们
+3D、表情符号、像素艺术、视频游戏、黏土动画或玩具
 
 官网: [https://replicate.com/fofr/face-to-many](https://replicate.com/fofr/face-to-many)
 

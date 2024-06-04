@@ -1,6 +1,6 @@
 # abiruyt_text-extract-ocr
 
-一个简单的OCR模型，可以轻松从图像中提取文本。
+OCR模型
 
 官网: [https://replicate.com/abiruyt/text-extract-ocr](https://replicate.com/abiruyt/text-extract-ocr)
 

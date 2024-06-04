@@ -1,6 +1,6 @@
 # Nous: Hermes 13B
 
-我们
+美国
 
 官网: [https://openrouter.ai/models/nousresearch/nous-hermes-llama2-13b](https://openrouter.ai/models/nousresearch/nous-hermes-llama2-13b)
 

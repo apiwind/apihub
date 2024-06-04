@@ -1,6 +1,6 @@
 # chenxwh_rembg
 
-删除图片背景
+美国
 
 官网: [https://replicate.com/cjwbw/rembg](https://replicate.com/cjwbw/rembg)
 

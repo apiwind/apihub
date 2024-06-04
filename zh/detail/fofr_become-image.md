@@ -1,6 +1,6 @@
 # fofr_become-image
 
-我们
+将任何脸部照片转换成另一张图像
 
 官网: [https://replicate.com/fofr/become-image](https://replicate.com/fofr/become-image)
 
