@@ -1,92 +1,102 @@
 {
+    "info": {
+        "version": "1.0.0", 
+        "description": "Fetch the YouTube Search Results and the information for each item for a specific search term, without any limits! You can find out more about the API and its usage here: https://userlip.github.io/Docs/#/youtube-search/requests  ", 
+        "title": "YouTube Search Results"
+    }, 
     "paths": {
         "/youtube-search/": {
             "get": {
-                "servers": [
-                    "youtube-search-results.p.rapidapi.com"
-                ],
-                "description": "Get all the YouTube Search Results Items and their Information! No limits and no Google API Key needed!. ",
-                "parameters": [
-                    {
-                        "description": "Leave empty if you want the results from the first page. Use the value from [nextpageRef] from the previous request (for example first page) to get the next page (for example 2nd page). MUST BE URL ENCODED. ",
-                        "required": false,
-                        "in": "query",
-                        "name": "next",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Key",
-                        "value": "SIGN-UP-FOR-KEY",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Host",
-                        "value": "youtube-search-results.p.rapidapi.com",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    }
-                ],
-                "summary": "Get all the YouTube Search Results Items and their Information! No limits and no Google API Key needed!. ",
                 "responses": {
                     "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "currentRef": {
-                                    "type": "null"
-                                },
-                                "filters": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "active": {
-                                                "type": "boolean"
-                                            },
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "ref": {
-                                                "type": "null"
-                                            }
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        }, 
+                                        "items": {
+                                            "items": {
+                                                "type": "object"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "currentRef": {
+                                            "type": "string"
+                                        }, 
+                                        "results": {
+                                            "type": "integer"
+                                        }, 
+                                        "nextpageRef": {
+                                            "type": "string"
+                                        }, 
+                                        "filters": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "active": {
+                                                        "type": "boolean"
+                                                    }, 
+                                                    "ref": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "name": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "query": {
+                                            "type": "string"
                                         }
                                     }
-                                },
-                                "items": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object"
-                                    }
-                                },
-                                "nextpageRef": {
-                                    "type": "string"
-                                },
-                                "query": {
-                                    "type": "string"
-                                },
-                                "results": {
-                                    "type": "integer"
-                                },
-                                "status": {
-                                    "type": "boolean"
                                 }
                             }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get all the YouTube Search Results Items and their Information! No limits and no Google API Key needed!. ", 
+                "description": "Get all the YouTube Search Results Items and their Information! No limits and no Google API Key needed!. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Leave empty if you want the results from the first page. Use the value from [nextpageRef] from the previous request (for example first page) to get the next page (for example 2nd page). MUST BE URL ENCODED. ", 
+                        "name": "next", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: youtube-search-results.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
                         }
                     }
-                }
+                ]
             }
         }
-    },
-    "name": "YouTube Search Results",
-    "description": "Fetch the YouTube Search Results and the information for each item for a specific search term, without any limits! You can find out more about the API and its usage here: https://userlip.github.io/Docs/#/youtube-search/requests  "
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "youtube-search-results.p.rapidapi.com"
+        }
+    ]
 }

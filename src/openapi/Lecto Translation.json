@@ -1,351 +1,364 @@
 {
+    "info": {
+        "version": "1.0.0", 
+        "description": "Fast Neural Translation. Text/HTML/JSON. Protected keys. Multiple source texts and target languages in a single request. Free Translation API trial with paid plans as low as $0.3 per million characters. 90+ supported languages. For personalized integration support or private plans with higher quotas, contact support@lecto.ai or via Telegram @lectoai . Also available via our website with attractive Translation API pricing at https://dashboard.lecto.ai/pricing  ", 
+        "title": "Lecto Translation"
+    }, 
     "paths": {
         "/v1/translate/languages": {
             "get": {
-                "servers": [
-                    "lecto-translation.p.rapidapi.com"
-                ],
-                "description": "Get a list of supported languages for translation in ISO-639-1, ISO-639-2 or BCP-47 formats.. ",
-                "parameters": [
-                    {
-                        "required": false,
-                        "in": "header",
-                        "name": "Accept-Encoding",
-                        "value": "gzip",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Key",
-                        "value": "SIGN-UP-FOR-KEY",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Host",
-                        "value": "lecto-translation.p.rapidapi.com",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    }
-                ],
-                "summary": "Get a list of supported languages for translation in ISO-639-1, ISO-639-2 or BCP-47 formats.. ",
                 "responses": {
                     "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "languages": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "language_code": {
-                                                "type": "string"
-                                            },
-                                            "display_name": {
-                                                "type": "string"
-                                            },
-                                            "support_source": {
-                                                "type": "boolean"
-                                            },
-                                            "support_target": {
-                                                "type": "boolean"
-                                            }
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "languages": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "support_source": {
+                                                        "type": "boolean"
+                                                    }, 
+                                                    "display_name": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "support_target": {
+                                                        "type": "boolean"
+                                                    }, 
+                                                    "language_code": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
                                         }
                                     }
                                 }
                             }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get a list of supported languages for translation in ISO-639-1, ISO-639-2 or BCP-47 formats.. ", 
+                "description": "Get a list of supported languages for translation in ISO-639-1, ISO-639-2 or BCP-47 formats.. ", 
+                "parameters": [
+                    {
+                        "description": "Eg: gzip. ", 
+                        "required": false, 
+                        "name": "Accept-Encoding", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: lecto-translation.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
                         }
                     }
-                }
+                ]
             }
-        },
+        }, 
         "/v1/translate/json": {
             "post": {
-                "servers": [
-                    "lecto-translation.p.rapidapi.com"
-                ],
-                "description": "Translate JSON values from JSON formatted strings into multiple target languages, with protected keys feature available.. ",
-                "parameters": [
-                    {
-                        "required": false,
-                        "in": "header",
-                        "name": "Accept-Encoding",
-                        "value": "Accept-Encoding: gzip",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Key",
-                        "value": "SIGN-UP-FOR-KEY",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Host",
-                        "value": "lecto-translation.p.rapidapi.com",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    }
-                ],
-                "summary": "Translate JSON values from JSON formatted strings into multiple target languages, with protected keys feature available.. ",
                 "responses": {
                     "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "translations": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "to": {
-                                                "type": "string"
-                                            },
-                                            "translated": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "string"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "translations": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "translated": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "type": "array"
+                                                    }, 
+                                                    "to": {
+                                                        "type": "string"
+                                                    }
                                                 }
-                                            }
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "from": {
+                                            "type": "string"
+                                        }, 
+                                        "translated_characters": {
+                                            "type": "integer"
+                                        }, 
+                                        "protected_keys": {
+                                            "items": {
+                                                "type": "string"
+                                            }, 
+                                            "type": "array"
                                         }
                                     }
-                                },
-                                "from": {
-                                    "type": "string"
-                                },
-                                "protected_keys": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "translated_characters": {
-                                    "type": "integer"
                                 }
                             }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Accept-Encoding: gzip. ", 
+                        "required": false, 
+                        "name": "Accept-Encoding", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: lecto-translation.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
                         }
                     }
-                },
+                ], 
+                "summary": "Translate JSON values from JSON formatted strings into multiple target languages, with protected keys feature available.. ", 
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "type": "object",
+                                "type": "object", 
                                 "properties": {
                                     "to": {
-                                        "type": "array",
                                         "items": {
                                             "type": "string"
-                                        }
-                                    },
-                                    "from": {
-                                        "type": "string"
-                                    },
-                                    "protected_keys": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
+                                        }, 
+                                        "type": "array"
+                                    }, 
                                     "json": {
                                         "type": "string"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/translate/text": {
-            "post": {
-                "servers": [
-                    "lecto-translation.p.rapidapi.com"
-                ],
-                "description": "Batch translate array of texts into multiple target languages.. ",
-                "parameters": [
-                    {
-                        "required": false,
-                        "in": "header",
-                        "name": "Accept-Encoding",
-                        "value": "Accept-Encoding: gzip",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Key",
-                        "value": "SIGN-UP-FOR-KEY",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Host",
-                        "value": "lecto-translation.p.rapidapi.com",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    }
-                ],
-                "summary": "Batch translate array of texts into multiple target languages.. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "translations": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "to": {
-                                                "type": "string"
-                                            },
-                                            "translated": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                "from": {
-                                    "type": "string"
-                                },
-                                "translated_characters": {
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "texts": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "to": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
+                                    }, 
                                     "from": {
                                         "type": "string"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/detect/text": {
-            "post": {
-                "servers": [
-                    "lecto-translation.p.rapidapi.com"
-                ],
-                "description": "Send array of source texts in request body and receive JSON response with the detected language codes.. ",
-                "parameters": [
-                    {
-                        "required": false,
-                        "in": "header",
-                        "name": "Accept-Encoding",
-                        "value": "Accept-Encoding: gzip",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Key",
-                        "value": "SIGN-UP-FOR-KEY",
-                        "schema": {
-                            "type": "ENUM"
-                        }
-                    },
-                    {
-                        "required": true,
-                        "in": "header",
-                        "name": "X-RapidAPI-Host",
-                        "value": "lecto-translation.p.rapidapi.com",
-                        "schema": {
-                            "type": "STRING"
-                        }
-                    }
-                ],
-                "summary": "Send array of source texts in request body and receive JSON response with the detected language codes.. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "detected_languages": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "original_characters": {
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "texts": {
-                                        "type": "array",
+                                    }, 
+                                    "protected_keys": {
                                         "items": {
                                             "type": "string"
+                                        }, 
+                                        "type": "array"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "description": "Translate JSON values from JSON formatted strings into multiple target languages, with protected keys feature available.. "
+            }
+        }, 
+        "/v1/translate/text": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "translations": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "translated": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "type": "array"
+                                                    }, 
+                                                    "to": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "from": {
+                                            "type": "string"
+                                        }, 
+                                        "translated_characters": {
+                                            "type": "integer"
                                         }
                                     }
                                 }
                             }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Accept-Encoding: gzip. ", 
+                        "required": false, 
+                        "name": "Accept-Encoding", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: lecto-translation.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
                         }
                     }
-                }
+                ], 
+                "summary": "Batch translate array of texts into multiple target languages.. ", 
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object", 
+                                "properties": {
+                                    "texts": {
+                                        "items": {
+                                            "type": "string"
+                                        }, 
+                                        "type": "array"
+                                    }, 
+                                    "from": {
+                                        "type": "string"
+                                    }, 
+                                    "to": {
+                                        "items": {
+                                            "type": "string"
+                                        }, 
+                                        "type": "array"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "description": "Batch translate array of texts into multiple target languages.. "
+            }
+        }, 
+        "/v1/detect/text": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "detected_languages": {
+                                            "items": {
+                                                "type": "string"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "original_characters": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Accept-Encoding: gzip. ", 
+                        "required": false, 
+                        "name": "Accept-Encoding", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: lecto-translation.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Send array of source texts in request body and receive JSON response with the detected language codes.. ", 
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object", 
+                                "properties": {
+                                    "texts": {
+                                        "items": {
+                                            "type": "string"
+                                        }, 
+                                        "type": "array"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "description": "Send array of source texts in request body and receive JSON response with the detected language codes.. "
             }
         }
-    },
-    "name": "Lecto Translation",
-    "description": "Fast Neural Translation. Text/HTML/JSON. Protected keys. Multiple source texts and target languages in a single request. Free Translation API trial with paid plans as low as $0.3 per million characters. 90+ supported languages. For personalized integration support or private plans with higher quotas, contact support@lecto.ai or via Telegram @lectoai . Also available via our website with attractive Translation API pricing at https://dashboard.lecto.ai/pricing  "
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "lecto-translation.p.rapidapi.com"
+        }
+    ]
 }

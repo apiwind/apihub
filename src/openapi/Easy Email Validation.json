@@ -1,69 +1,79 @@
 {
+    "info": {
+        "version": "1.0.0", 
+        "description": "Use this API to quickly and effectively validate an email addresses. This API runs the following checks: valid email format, mx Record, and disposable email.  Email Validation, E-mail Check Invalid or Disposable Domain, Email Verification, Email Address Validation.  ", 
+        "title": "Easy Email Validation"
+    }, 
     "paths": {
         "/validate": {
             "get": {
-                "servers": [
-                    "easy-email-validation.p.rapidapi.com"
-                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "disposable": {
+                                            "type": "boolean"
+                                        }, 
+                                        "domain": {
+                                            "type": "string"
+                                        }, 
+                                        "valid": {
+                                            "type": "boolean"
+                                        }, 
+                                        "mxRecord": {
+                                            "type": "boolean"
+                                        }, 
+                                        "email": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Validate an email. ", 
                 "description": "Validate an email. ", 
                 "parameters": [
                     {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
                         "description": "email address. ", 
-                        "required": true, 
-                        "in": "query", 
                         "name": "email", 
-                        "schema": {
-                            "type": "STRING"
-                        }
+                        "in": "query"
                     }, 
                     {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Key", 
-                        "value": "SIGN-UP-FOR-KEY", 
+                        "in": "header", 
                         "schema": {
-                            "type": "ENUM"
+                            "type": "string"
                         }
                     }, 
                     {
+                        "description": "Eg: easy-email-validation.p.rapidapi.com. ", 
                         "required": true, 
-                        "in": "header", 
                         "name": "X-RapidAPI-Host", 
-                        "value": "easy-email-validation.p.rapidapi.com", 
+                        "in": "header", 
                         "schema": {
-                            "type": "STRING"
+                            "type": "string"
                         }
                     }
-                ], 
-                "summary": "Validate an email. ",
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "email": {
-                                    "type": "string"
-                                },
-                                "domain": {
-                                    "type": "string"
-                                },
-                                "disposable": {
-                                    "type": "boolen"
-                                },
-                                "mxRecord": {
-                                    "type": "boolen"
-                                },
-                                "valid": {
-                                    "type": "boolen"
-                                }
-                            }
-                        }
-                    }
-                }
+                ]
             }
         }
     }, 
-    "name": "Easy Email Validation", 
-    "description": "Use this API to quickly and effectively validate an email addresses. This API runs the following checks: valid email format, mx Record, and disposable email.  Email Validation, E-mail Check Invalid or Disposable Domain, Email Verification, Email Address Validation.  "
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "easy-email-validation.p.rapidapi.com"
+        }
+    ]
 }
