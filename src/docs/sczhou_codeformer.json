@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/sczhou/codeformer",
+            "name": "sczhou_codeformer",
+            "description": "Robust face restoration algorithm for old photos / AI-generated faces",
+            "category": {
+                "Image Processing": [
+                    "Restore images"
+                ]
+            }
+        }
+    },
+    "openapi": "sczhou_codeformer.json"
+}

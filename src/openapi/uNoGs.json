@@ -1,0 +1,1207 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "uNoGS (unofficial Netflix online Global Search) allows anyone to search the global Netflix catalog.  uNoGS (unofficial Netflix online Global Search) allows anyone to easily search the global Netflix catalog. V2 is now out and designed from the ground up to work with RapidAPI.   ", 
+        "title": "uNoGS"
+    }, 
+    "paths": {
+        "/search/titles": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "rating": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "runtime": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "img": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "poster": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "netflix_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "imdb_id": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250tv": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "synopsis": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "year": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title_type": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "title_date": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Parameter Notes:. new_date will either take a single date and check for all titles added after that date or it will take 2 dates separated by a comma to check titles added between them.", 
+                "description": "Parameter Notes:. new_date will either take a single date and check for all titles added after that date or it will take 2 dates separated by a comma to check titles added between them.", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "number between 1 and 10, aligns with imdb rating, if there is one. ", 
+                        "name": "end_rating", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "CSV list of country IDs e.g. 46,78. ", 
+                        "name": "country_list", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Minimum: 1900. year date > 1900. ", 
+                        "name": "start_year", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "name of person in title. ", 
+                        "name": "person", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "where you want the response to start e.g. 10 starts with the 10th element. ", 
+                        "name": "offset", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Enum: date,date_asc,rating,rating_asc,title,title_asc,video_type,video_type_asc,runtime,runtime_asc,film_year,film_year_asc,top250,top250_asc,top250tv,top250tv_asc. Order of Response. ", 
+                        "name": "order_by", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum: 100. limit of object returned. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Minimum: 1900. year date > 1900. ", 
+                        "name": "end_year", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "IMDB top 250 Movies number 0-250. ", 
+                        "name": "top250", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "number between 1 and 10, aligns with imdb rating, if there is one. ", 
+                        "name": "start_rating", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "2018-01-01 or 2010-01-01,2012-01-01 see Parameter Notes. ", 
+                        "name": "new_date", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "IMDB top 250 Series number 0-250. ", 
+                        "name": "top250tv", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "search all titles by name. ", 
+                        "name": "title", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "if 'true' show all titles set to expire. ", 
+                        "name": "expiring", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "name of subtitle language e.g. english. ", 
+                        "name": "subtitle", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Enum: movie,series. movie or series. ", 
+                        "name": "type", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "CSV list of genres, see misc/genre endpoint. ", 
+                        "name": "genre_list", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "name of audio language e.g english. ", 
+                        "name": "audio", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "and=language in bot audio and sub, or=language in either audio or sub. ", 
+                        "name": "audio_sub_andor", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "and=titles in all countries, or=any title in these countries, unique=unique titles in chosen countries. ", 
+                        "name": "country_andorunique", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/static/countries": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "expiring": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "countrycode": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "nl7": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "country": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "tmovs": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "tseries": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "tvids": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "id": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get Static list of Supported Countries. ", 
+                "description": "Get Static list of Supported Countries. ", 
+                "parameters": [
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/title/details": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "maturity_label": {
+                                            "type": "string"
+                                        }, 
+                                        "rating": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_image": {
+                                            "type": "string"
+                                        }, 
+                                        "netflix_id": {
+                                            "type": "string"
+                                        }, 
+                                        "year": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_plot": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_runtime": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_id": {
+                                            "type": "string"
+                                        }, 
+                                        "title": {
+                                            "type": "string"
+                                        }, 
+                                        "maturity_level": {
+                                            "type": "string"
+                                        }, 
+                                        "start_date": {
+                                            "type": "string"
+                                        }, 
+                                        "origin_country": {
+                                            "type": "string"
+                                        }, 
+                                        "large_image": {
+                                            "type": "string"
+                                        }, 
+                                        "poster": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_votes": {
+                                            "type": "string"
+                                        }, 
+                                        "latest_date": {
+                                            "type": "string"
+                                        }, 
+                                        "awards": {
+                                            "type": "string"
+                                        }, 
+                                        "alt_metascore": {
+                                            "type": "string"
+                                        }, 
+                                        "title_type": {
+                                            "type": "string"
+                                        }, 
+                                        "synopsis": {
+                                            "type": "string"
+                                        }, 
+                                        "default_image": {
+                                            "type": "string"
+                                        }, 
+                                        "runtime": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "General Details associated with a Title. ", 
+                "description": "General Details associated with a Title. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/title/genres": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "genre": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "genre_id": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "All Genres Associated with a Title. ", 
+                "description": "All Genres Associated with a Title. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/title/images": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "image_type": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "url": {
+                                                        "type": "string", 
+                                                        "description": "filmid as netflixid,url,itype"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "All Images associated with a Title. ", 
+                "description": "All Images associated with a Title. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/static/genres": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "expiring": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "countrycode": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "nl7": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "country": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "tmovs": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "tseries": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "tvids": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "id": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Get Static list of Genres (updated daily). ", 
+                "description": "Get Static list of Genres (updated daily). ", 
+                "parameters": [
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/title/episodes": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "title": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "image": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "synopsis": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "episode_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "season_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "netflix_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "episode_number": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "season_number": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "All Episodes associated with a Title. ", 
+                "description": "All Episodes associated with a Title. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix season ID e.g. 70105286 for Breaking Bad season 1. ", 
+                        "name": "season_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/title/countries": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "subtitle": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "new_date": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "country": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "season_detail": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "country_code": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "expire_date": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "audio": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "All Country/Language information associated with a Title. ", 
+                "description": "All Country/Language information associated with a Title. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/search/people": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "rating": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "runtime": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "img": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "poster": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "netflix_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "imdb_id": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250tv": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "synopsis": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "year": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title_type": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "title_date": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search for people by title name, person name, or netflix_id. ", 
+                "description": "Search for people by title name, person name, or netflix_id. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Enum: Actor,Creator,Director. what the person did on the project. ", 
+                        "name": "person_type", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum: 100. limit of object returned. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "search all titles by name. ", 
+                        "name": "name", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "where you want the response to start e.g. 10 starts with the 10th element. ", 
+                        "name": "offset", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/search/deleted": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "object": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer"
+                                                }, 
+                                                "limit": {
+                                                    "type": "integer"
+                                                }, 
+                                                "offset": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "results": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "rating": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "runtime": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "img": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "poster": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "netflix_id": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "imdb_id": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250tv": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "synopsis": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "year": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "title_type": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "top250": {
+                                                        "type": "integer"
+                                                    }, 
+                                                    "title_date": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search for Deleted Titles by Country or Title Name. delete_date will either take a single date and check for all titles added after that date or it will take 2 dates separated by a comma to check titles added between them.", 
+                "description": "Search for Deleted Titles by Country or Title Name. delete_date will either take a single date and check for all titles added after that date or it will take 2 dates separated by a comma to check titles added between them.", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "search all titles by name. ", 
+                        "name": "title", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "2018-01-01 or 2010-01-01,2012-01-01 see Parameter Notes. ", 
+                        "name": "delete_date", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "actual netflix ID for the title e.g. 70143836 for Breaking Bad. ", 
+                        "name": "netflix_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum: 100. limit of object returned. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "where you want the response to start e.g. 10 starts with the 10th element. ", 
+                        "name": "offset", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "CSV list of country IDs e.g. 46,78. ", 
+                        "name": "country_list", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: unogs-unogs-v1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "unogs-unogs-v1.p.rapidapi.com"
+        }
+    ]
+}

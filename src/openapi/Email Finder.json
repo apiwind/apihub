@@ -1,0 +1,96 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Find The Email Address of a Professional - e.g. John Doe @ company.com on the Web. Use this Super-Fast and Simple API to find the email address of a professional by full name (John Doe) and email domain (@company.com) as found on the web. Chat with us live on Discord: https://discord.gg/wxJxGsZgha.  ", 
+        "title": "Email Finder"
+    }, 
+    "paths": {
+        "/find-emails": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "data": {
+                                            "items": {
+                                                "type": "object", 
+                                                "properties": {
+                                                    "sources": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "type": "array"
+                                                    }, 
+                                                    "email": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "request_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Find the company emails of a professional by full name (John Doe) and email domain (@company.com). ", 
+                "description": "Find the company emails of a professional by full name (John Doe) and email domain (@company.com). ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "The name of the person/professional to find. We recommend using the full name of the person for more accurate results, eg, Bill Gates. ", 
+                        "name": "name", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "The email domain of the company or person to search for, eg, microsoft.com. ", 
+                        "name": "email_domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: email-finder4.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "email-finder4.p.rapidapi.com"
+        }
+    ]
+}

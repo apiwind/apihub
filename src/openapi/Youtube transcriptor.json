@@ -1,0 +1,74 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Transcript Youtube Podcasts & videos.  ", 
+        "title": "Youtube transcriptor"
+    }, 
+    "paths": {
+        "/transcript": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Transcript videos. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Example : youtube.com/watch?v=0-fD8SDEvrR. ", 
+                        "name": "video_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "auto detect language if none provided.. ", 
+                        "name": "lang", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: youtube-transcriptor.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Transcript videos. "
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "youtube-transcriptor.p.rapidapi.com"
+        }
+    ]
+}

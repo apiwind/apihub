@@ -1,0 +1,17 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://openrouter.ai/models/google/gemini-pro-1.5",
+            "price": {
+                "input": "$2.5",
+                "output": "$7.5"
+            },
+            "name": "Google: Gemini Pro 1.5 (preview)",
+            "description": "Google's latest multimodal model, supporting image and video in text or chat prompts.\nOptimized for language tasks including:\n\nCode generation\nText generation\nText editing\nProblem solving\nRecommendations\nInformation extraction\nData extraction or generation\nAI agents\n\nUsage of Gemini is subject to Google's [Gemini Terms of Use](https://ai.google.dev/terms).\nNote: Preview models are offered for testing purposes and should not be used in production apps. This model is heavily rate limited.\n#multimodal",
+            "category": {
+                "LLM": []
+            }
+        }
+    },
+    "openapi": "Google: Gemini Pro 1.5 (preview).json"
+}

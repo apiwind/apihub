@@ -1,0 +1,285 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Create photos, paintings and avatars for anyone in any style within seconds. (Stylization version)", 
+        "title": "tencentarc_photomaker-style"
+    }, 
+    "paths": {
+        "/predictions": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "input", 
+                                    "version"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "input": {
+                                        "required": [
+                                            "input_image"
+                                        ], 
+                                        "type": "object", 
+                                        "properties": {
+                                            "prompt": {
+                                                "default": "A photo of a person img", 
+                                                "type": "string", 
+                                                "description": "Prompt. Example: 'a photo of a man/woman img'. The phrase 'img' is the trigger word."
+                                            }, 
+                                            "input_image2": {
+                                                "type": "string", 
+                                                "description": "Additional input image (optional)", 
+                                                "format": "uri"
+                                            }, 
+                                            "input_image3": {
+                                                "type": "string", 
+                                                "description": "Additional input image (optional)", 
+                                                "format": "uri"
+                                            }, 
+                                            "num_steps": {
+                                                "default": 20, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Number of sample steps", 
+                                                "maximum": 100
+                                            }, 
+                                            "input_image4": {
+                                                "type": "string", 
+                                                "description": "Additional input image (optional)", 
+                                                "format": "uri"
+                                            }, 
+                                            "guidance_scale": {
+                                                "default": 5, 
+                                                "minimum": 1, 
+                                                "type": "number", 
+                                                "description": "Guidance scale. A guidance scale of 1 corresponds to doing no classifier free guidance.", 
+                                                "maximum": 10
+                                            }, 
+                                            "seed": {
+                                                "minimum": 0, 
+                                                "type": "integer", 
+                                                "description": "Seed. Leave blank to use a random number", 
+                                                "maximum": 2147483647
+                                            }, 
+                                            "num_outputs": {
+                                                "default": 1, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Number of output images", 
+                                                "maximum": 4
+                                            }, 
+                                            "style_name": {
+                                                "default": "(No style)", 
+                                                "enum": [
+                                                    "(No style)", 
+                                                    "Cinematic", 
+                                                    "Disney Charactor", 
+                                                    "Digital Art", 
+                                                    "Photographic (Default)", 
+                                                    "Fantasy art", 
+                                                    "Neonpunk", 
+                                                    "Enhance", 
+                                                    "Comic book", 
+                                                    "Lowpoly", 
+                                                    "Line art"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Style template. The style template will add a style-specific prompt and negative prompt to the user's prompt."
+                                            }, 
+                                            "style_strength_ratio": {
+                                                "default": 20, 
+                                                "minimum": 15, 
+                                                "type": "number", 
+                                                "description": "Style strength (%)", 
+                                                "maximum": 50
+                                            }, 
+                                            "input_image": {
+                                                "type": "string", 
+                                                "description": "The input image, for example a photo of your face.", 
+                                                "format": "uri"
+                                            }, 
+                                            "disable_safety_checker": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "Disable safety checker for generated images."
+                                            }, 
+                                            "negative_prompt": {
+                                                "default": "nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry", 
+                                                "type": "string", 
+                                                "description": "Negative Prompt. The negative prompt should NOT contain the trigger word."
+                                            }
+                                        }
+                                    }, 
+                                    "webhook_events_filter": {
+                                        "type": "string", 
+                                        "description": "By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying webhook_events_filter in the prediction request: start: immediately on prediction start, output: each time a prediction generates an output (note that predictions can generate multiple outputs), logs: each time log output is generated by a prediction, completed: when the prediction reaches a terminal state (succeeded/canceled/failed)."
+                                    }, 
+                                    "webhook": {
+                                        "type": "string", 
+                                        "description": "An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the get prediction operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting."
+                                    }, 
+                                    "version": {
+                                        "type": "string", 
+                                        "description": "Eg: 467d062309da518648ba89d226490e02b8ed09b5abc15026e54e31c5a8cd0769. The ID of the model version"
+                                    }, 
+                                    "stream": {
+                                        "type": "boolean", 
+                                        "description": "Request a URL to receive streaming output using server-sent events (SSE)."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "summary": "Create a prediction and get the output.", 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "description": "Eg: application/json. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Content-Type"
+                    }
+                ], 
+                "description": "Create a prediction and get the output."
+            }, 
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "List the first page of your predictions", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }
+                ], 
+                "summary": "List the first page of your predictions"
+            }
+        }, 
+        "/predictions/{prediction_id}/cancel": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Cancel an in progress prediction", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to cancel", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Cancel an in progress prediction"
+            }
+        }, 
+        "/predictions/{prediction_id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Get the latest version of a prediction by id", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to get", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Get the latest version of a prediction by id"
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "https://api.replicate.com"
+        }
+    ]
+}

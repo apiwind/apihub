@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/zsxkib/instant-id",
+            "name": "zsxkib_instant-id",
+            "description": "Make realistic images of real people instantly",
+            "category": {
+                "Image Processing": [
+                    "Generate images"
+                ]
+            }
+        }
+    },
+    "openapi": "zsxkib_instant-id.json"
+}

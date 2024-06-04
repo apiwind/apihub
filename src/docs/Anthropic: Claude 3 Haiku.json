@@ -1,0 +1,17 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-haiku",
+            "price": {
+                "input": "$0.25",
+                "output": "$1.25"
+            },
+            "name": "Anthropic: Claude 3 Haiku",
+            "description": "Claude 3 Haiku is Anthropic's fastest and most compact model for\nnear-instant responsiveness. Quick and accurate targeted performance.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-haiku)\n#multimodal",
+            "category": {
+                "LLM": []
+            }
+        }
+    },
+    "openapi": "Anthropic: Claude 3 Haiku.json"
+}

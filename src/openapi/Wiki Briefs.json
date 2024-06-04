@@ -1,0 +1,134 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Briefs about anything you search. No need to read lengthy articles, we summarize. This API briefs about anything you search based on info from Wikipedia and WikiHow. Uses natural language processing (NLP) to summarize the Wiki articles to give short but important information. Also provides related items based on similarity score.  ", 
+        "title": "Wiki Briefs"
+    }, 
+    "paths": {
+        "/howto": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "key2": {
+                                            "type": "string"
+                                        }, 
+                                        "key1": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search any 'how-to' question on WikiHow and returns summarized methods and steps.. ", 
+                "description": "Search any 'how-to' question on WikiHow and returns summarized methods and steps.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Any how-to question to ask. For example, 'find meaning in life', 'learn any language', 'play soccer', 'change an oil filter'\u2026. ", 
+                        "name": "q", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: wiki-briefs.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/search": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "key2": {
+                                            "type": "string"
+                                        }, 
+                                        "key1": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search anything on Wikipedia and returns top K summarized information and similar items. Images and coordinates with map link are provided when available.. ", 
+                "description": "Search anything on Wikipedia and returns top K summarized information and similar items. Images and coordinates with map link are provided when available.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Query string, can be anything.. ", 
+                        "name": "q", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Return top k summarized information. Default to 5. Must be greater than 0.. ", 
+                        "name": "topk", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: wiki-briefs.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "wiki-briefs.p.rapidapi.com"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/andreasjansson/clip-features",
+            "name": "andreasjansson_clip-features",
+            "description": "Return CLIP features for the clip-vit-large-patch14 model",
+            "category": {
+                "Tool": [
+                    "Others"
+                ]
+            }
+        }
+    },
+    "openapi": "andreasjansson_clip-features.json"
+}

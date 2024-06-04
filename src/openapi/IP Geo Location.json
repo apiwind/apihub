@@ -1,0 +1,480 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "API returns location data such as country, city, latitude, longitude, timezone, asn, currency, security data for IPv4 and IPv6 addresses in JSON or XML formats.  IP geo location API gives the detailed information about IP location of your visitors. Data includes information about country, city, latitude and longitude, timezone, asn, currency and some security data. API supports IPv4 and IPv6 IP addresses. Response formats: json and xml.  ", 
+        "title": "IP Geo Location"
+    }, 
+    "paths": {
+        "/ip/check": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "city": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "population": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "area": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "country": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "area_size": {
+                                                    "type": "string"
+                                                }, 
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "phone_code": {
+                                                    "type": "string"
+                                                }, 
+                                                "languages": {
+                                                    "type": "object", 
+                                                    "properties": {
+                                                        "fr": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "en": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "es": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "haw": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }, 
+                                                "capital": {
+                                                    "type": "string"
+                                                }, 
+                                                "is_in_eu": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "population": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "continent": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "currency": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "ip": {
+                                            "type": "string"
+                                        }, 
+                                        "location": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "time": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "timezone": {
+                                                    "type": "string"
+                                                }, 
+                                                "gtm_offset": {
+                                                    "type": "integer"
+                                                }, 
+                                                "time": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "security": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "is_tor": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_proxy": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_thread": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_crawler": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "asn": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "organisation": {
+                                                    "type": "string"
+                                                }, 
+                                                "number": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "postcode": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns the IP address of the client with all the location data. ", 
+                "description": "Returns the IP address of the client with all the location data. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "The desired format of the data. Options: json or xml. ", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Lets you to return only required data. It can be comma separated. Options: asn, city, country, continent, area, currency, security, time, postcode. If left blank the API will return all available data.. ", 
+                        "name": "filter", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "language code to return the results in the specific language. Available options are: en, ru, zh, es, ar, fr, fa, ja, pl, it, pt, de. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ip-geo-location.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/ip/{ip}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "city": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "population": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "area": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "country": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "area_size": {
+                                                    "type": "string"
+                                                }, 
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "phone_code": {
+                                                    "type": "string"
+                                                }, 
+                                                "languages": {
+                                                    "type": "object", 
+                                                    "properties": {
+                                                        "fr": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "en": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "es": {
+                                                            "type": "string"
+                                                        }, 
+                                                        "haw": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }, 
+                                                "capital": {
+                                                    "type": "string"
+                                                }, 
+                                                "is_in_eu": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "population": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }, 
+                                        "continent": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameid": {
+                                                    "type": "integer"
+                                                }, 
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "currency": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "ip": {
+                                            "type": "string"
+                                        }, 
+                                        "location": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "time": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "timezone": {
+                                                    "type": "string"
+                                                }, 
+                                                "gtm_offset": {
+                                                    "type": "integer"
+                                                }, 
+                                                "time": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "security": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "is_tor": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_proxy": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_thread": {
+                                                    "type": "boolean"
+                                                }, 
+                                                "is_crawler": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "asn": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "organisation": {
+                                                    "type": "string"
+                                                }, 
+                                                "number": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "postcode": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Provides geo information for the given IP. ", 
+                "description": "Provides geo information for the given IP. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "IPv4 or IPv6 address. ", 
+                        "name": "ip", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "The desired format of the data. Options: json or xml. ", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Lets you to return only required data. It can be comma separated. Options: asn, city, country, continent, area, currency, security, time, postcode. If left blank the API will return all available data.. ", 
+                        "name": "filter", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "language code to return the results in the specific language. Available options are: en, ru, zh, es, ar, fr, fa, ja, pl, it, pt, de. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ip-geo-location.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "ip-geo-location.p.rapidapi.com"
+        }
+    ]
+}

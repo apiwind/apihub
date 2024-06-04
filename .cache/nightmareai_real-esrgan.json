@@ -1,0 +1,1 @@
+{"openapi":"nightmareai_real-esrgan.json","apidocs":"","openapi_json":null,"info":{"us":{"name":"nightmareai_real-esrgan","description":"Real-ESRGAN with optional face correction and adjustable upscale","info":{"about":"","case":null},"sourcelink":"https://replicate.com/nightmareai/real-esrgan","price":{"input":"","output":""},"category":{"Image Processing":["Upscale images"]}}}}

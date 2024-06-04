@@ -1,0 +1,1 @@
+{"openapi":"tencentarc_gfpgan.json","apidocs":"","openapi_json":null,"info":{"us":{"name":"tencentarc_gfpgan","description":"Practical face restoration algorithm for *old photos* or *AI-generated faces*","info":{"about":"","case":null},"sourcelink":"https://replicate.com/tencentarc/gfpgan","price":{"input":"","output":""},"category":{"Image Processing":["Restore images"]}}}}

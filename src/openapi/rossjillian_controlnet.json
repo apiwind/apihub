@@ -1,0 +1,300 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Control diffusion models", 
+        "title": "rossjillian_controlnet"
+    }, 
+    "paths": {
+        "/predictions": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "input", 
+                                    "version"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "input": {
+                                        "required": [
+                                            "prompt", 
+                                            "image", 
+                                            "structure"
+                                        ], 
+                                        "type": "object", 
+                                        "properties": {
+                                            "scale": {
+                                                "default": 9, 
+                                                "minimum": 0.1, 
+                                                "type": "number", 
+                                                "description": "Scale for classifier-free guidance", 
+                                                "maximum": 30
+                                            }, 
+                                            "prompt": {
+                                                "type": "string", 
+                                                "description": "Prompt for the model"
+                                            }, 
+                                            "image": {
+                                                "type": "string", 
+                                                "description": "Input image", 
+                                                "format": "uri"
+                                            }, 
+                                            "low_threshold": {
+                                                "default": 100, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "[canny only] Line detection low threshold", 
+                                                "maximum": 255
+                                            }, 
+                                            "return_reference_image": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "whether to return the reference image along with the output"
+                                            }, 
+                                            "eta": {
+                                                "default": 0, 
+                                                "type": "number", 
+                                                "description": "Controls the amount of noise that is added to the input data during the denoising diffusion process. Higher value -> more noise"
+                                            }, 
+                                            "steps": {
+                                                "default": 20, 
+                                                "type": "integer", 
+                                                "description": "Steps"
+                                            }, 
+                                            "scheduler": {
+                                                "default": "DDIM", 
+                                                "enum": [
+                                                    "DDIM", 
+                                                    "DPMSolverMultistep", 
+                                                    "HeunDiscrete", 
+                                                    "K_EULER_ANCESTRAL", 
+                                                    "K_EULER", 
+                                                    "KLMS", 
+                                                    "PNDM", 
+                                                    "UniPCMultistep"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Choose a scheduler."
+                                            }, 
+                                            "seed": {
+                                                "type": "integer", 
+                                                "description": "Seed"
+                                            }, 
+                                            "num_outputs": {
+                                                "default": 1, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Number of images to output (higher values may OOM)", 
+                                                "maximum": 4
+                                            }, 
+                                            "high_threshold": {
+                                                "default": 200, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "[canny only] Line detection high threshold", 
+                                                "maximum": 255
+                                            }, 
+                                            "image_resolution": {
+                                                "default": 512, 
+                                                "enum": [
+                                                    256, 
+                                                    512, 
+                                                    768
+                                                ], 
+                                                "type": "integer", 
+                                                "description": "Resolution of output image (will be scaled to this as its smaller dimension)"
+                                            }, 
+                                            "negative_prompt": {
+                                                "default": "Longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality", 
+                                                "type": "string", 
+                                                "description": "Negative prompt"
+                                            }, 
+                                            "structure": {
+                                                "enum": [
+                                                    "canny", 
+                                                    "depth", 
+                                                    "hed", 
+                                                    "hough", 
+                                                    "normal", 
+                                                    "pose", 
+                                                    "scribble", 
+                                                    "seg"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Controlnet structure to condition on"
+                                            }
+                                        }
+                                    }, 
+                                    "webhook_events_filter": {
+                                        "type": "string", 
+                                        "description": "By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying webhook_events_filter in the prediction request: start: immediately on prediction start, output: each time a prediction generates an output (note that predictions can generate multiple outputs), logs: each time log output is generated by a prediction, completed: when the prediction reaches a terminal state (succeeded/canceled/failed)."
+                                    }, 
+                                    "webhook": {
+                                        "type": "string", 
+                                        "description": "An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the get prediction operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting."
+                                    }, 
+                                    "version": {
+                                        "type": "string", 
+                                        "description": "Eg: 795433b19458d0f4fa172a7ccf93178d2adb1cb8ab2ad6c8fdc33fdbcd49f477. The ID of the model version"
+                                    }, 
+                                    "stream": {
+                                        "type": "boolean", 
+                                        "description": "Request a URL to receive streaming output using server-sent events (SSE)."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "summary": "Create a prediction and get the output.", 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "description": "Eg: application/json. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Content-Type"
+                    }
+                ], 
+                "description": "Create a prediction and get the output."
+            }, 
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "List the first page of your predictions", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }
+                ], 
+                "summary": "List the first page of your predictions"
+            }
+        }, 
+        "/predictions/{prediction_id}/cancel": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Cancel an in progress prediction", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to cancel", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Cancel an in progress prediction"
+            }
+        }, 
+        "/predictions/{prediction_id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Get the latest version of a prediction by id", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to get", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Get the latest version of a prediction by id"
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "https://api.replicate.com"
+        }
+    ]
+}

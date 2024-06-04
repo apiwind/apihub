@@ -1,0 +1,15 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://replicate.com/jingyunliang/swinir",
+            "name": "jingyunliang_swinir",
+            "description": "Image Restoration Using Swin Transformer",
+            "category": {
+                "Image Processing": [
+                    "Restore images"
+                ]
+            }
+        }
+    },
+    "openapi": "jingyunliang_swinir.json"
+}

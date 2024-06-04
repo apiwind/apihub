@@ -1,0 +1,257 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "\u201cGoogle Keyword Insights API\u201d \u2013 Your solution for dynamic keyword suggestions and metrics. Harness the power of Google Search to access real-time trends, competition data, and actionable insights. Seamlessly integrate for efficient, data-driven decision-making. For any queries contact us at: info@keyinsight.pro  ", 
+        "title": "Google Keyword Insight"
+    }, 
+    "paths": {
+        "/keysuggest": {
+            "get": {
+                "summary": "Get keyword suggestions and related metrics by providing a specific keyword and location. Parameters: keyword (required): The target keyword for which you want suggestions. location (required): The location or region to refine keyword suggestions.. ", 
+                "description": "Get keyword suggestions and related metrics by providing a specific keyword and location. Parameters: keyword (required): The target keyword for which you want suggestions. location (required): The location or region to refine keyword suggestions.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Eg, Email Marketing. ", 
+                        "name": "keyword", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Eg, US. ", 
+                        "name": "location", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "Eg, en. ", 
+                        "name": "lang", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: google-keyword-insight1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }, 
+        "/globalkey": {
+            "get": {
+                "summary": "Retrieve global keyword suggestions and metrics by providing a keyword. Parameters: keyword (required): The target keyword for which you want global suggestions. lang (required): Two digit code for language.. ", 
+                "description": "Retrieve global keyword suggestions and metrics by providing a keyword. Parameters: keyword (required): The target keyword for which you want global suggestions. lang (required): Two digit code for language.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Eg, Email Marketing. ", 
+                        "name": "keyword", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Eg, en. ", 
+                        "name": "lang", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: google-keyword-insight1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }, 
+        "/urlkeysuggest": {
+            "get": {
+                "summary": "Receive keyword suggestions and metrics based on a given URL and location. Parameters: url (required): The URL for which you want keyword suggestions. location (required): The location or region to refine keyword suggestions.. ", 
+                "description": "Receive keyword suggestions and metrics based on a given URL and location. Parameters: url (required): The URL for which you want keyword suggestions. location (required): The location or region to refine keyword suggestions.. ", 
+                "parameters": [
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: google-keyword-insight1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: rapidapi.com. ",
+                        "required": true,
+                        "name": "url",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: US. ",
+                        "required": true,
+                        "name": "location", 
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: en. ",
+                        "required": true,
+                        "name": "lang", 
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }, 
+        "/globalurl": {
+            "get": {
+                "summary": "Fetch global keyword suggestions and metrics based on a provided URL. Parameters: url (required): The URL for which you want global keyword suggestions. lang (required): Two digit code for language.. ", 
+                "description": "Fetch global keyword suggestions and metrics based on a provided URL. Parameters: url (required): The URL for which you want global keyword suggestions. lang (required): Two digit code for language.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Eg, rapidapi.com. ", 
+                        "name": "url", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Eg, en. ", 
+                        "name": "lang", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: google-keyword-insight1.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "google-keyword-insight1.p.rapidapi.com"
+        }
+    ]
+}

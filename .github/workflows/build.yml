@@ -1,0 +1,20 @@
+name: Auto Deploy to Main Branch
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 检出 dev 分支的代码
+    - name: Checkout Dev Branch
+      uses: actions/checkout@v2
+      with:
+        ref: dev
+
+    # 运行您的 build.sh 脚本
+    - name: Run Build Script
+      run: chmod +x ./build/build.sh && ./build/build.sh

@@ -1,0 +1,906 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Search cities, countries and administrative divisions by name, autocompletion or IP. With Spott you\u2019ll be able to:  Search places by a full query or autocompletion, across more than 240,000 records from all the world. Filter them by country, type and location. Find places and get their localized names in more than 20 languages. Get the place where an IP address is located.  ", 
+        "title": "Spott"
+    }, 
+    "paths": {
+        "/places": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns a list of places (either countries, cities or administrative divisions) matching a query and filtered by properties.. ", 
+                "description": "Returns a list of places (either countries, cities or administrative divisions) matching a query and filtered by properties.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by \\\"type\\\". It's possible to specify multiple values separating them with commas. Valid types are CITY, ADMIN_DIVISION_1, ADMIN_DIVISION_2 and COUNTRY.. ", 
+                        "name": "type", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Amount of places to ignore before beginning to return results. Used together with \\\"limit\\\" to paginate results. Defaults to 0.. ", 
+                        "name": "skip", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their country \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US,CA,MX).. ", 
+                        "name": "country", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum number of places to return. Used together with \\\"skip\\\" to paginate results. Defaults to 10, maximum is 100.. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their adminDivision1 \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US.CA,US.DE).. ", 
+                        "name": "adminDivision1", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their adminDivision2 \\\"id\\\". It's possible to specify multiple values separating them with commas.. ", 
+                        "name": "adminDivision2", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum radius from the point specified by \\\"latitude\\\" and \\\"longitude\\\" to filter places located within the area. The value must be expressed in Kilometers. Defaults to 100km.. ", 
+                        "name": "accuracyRadiusKm", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Latitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"longitude\\\" is not specified.. ", 
+                        "name": "latitude", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Query string to find places with a similar name.. ", 
+                        "name": "q", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Longitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"latitude\\\" is not specified.. ", 
+                        "name": "longitude", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/places/{id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "phoneCodes": {
+                                            "items": {
+                                                "type": "string", 
+                                                "format": "utc-millisec"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "domain": {
+                                            "type": "string"
+                                        }, 
+                                        "iso3": {
+                                            "type": "string"
+                                        }, 
+                                        "iso2": {
+                                            "type": "string"
+                                        }, 
+                                        "id": {
+                                            "type": "string"
+                                        }, 
+                                        "currencyCode": {
+                                            "type": "string"
+                                        }, 
+                                        "coordinates": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "localizedName": {
+                                            "type": "string"
+                                        }, 
+                                        "languages": {
+                                            "items": {
+                                                "type": "string"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "neighbourCountryIds": {
+                                            "items": {
+                                                "type": "string"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "timezoneId": {
+                                            "type": "string"
+                                        }, 
+                                        "elevation": {
+                                            "type": "integer"
+                                        }, 
+                                        "geonameId": {
+                                            "type": "integer"
+                                        }, 
+                                        "currencyName": {
+                                            "type": "string"
+                                        }, 
+                                        "locales": {
+                                            "items": {
+                                                "type": "string"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "population": {
+                                            "type": "integer"
+                                        }, 
+                                        "isoNumeric": {
+                                            "type": "string", 
+                                            "format": "color"
+                                        }, 
+                                        "postalCodeRegex": {
+                                            "type": "string"
+                                        }, 
+                                        "name": {
+                                            "type": "string"
+                                        }, 
+                                        "postalCodeFormat": {
+                                            "type": "string"
+                                        }, 
+                                        "areaSqKm": {
+                                            "type": "integer"
+                                        }, 
+                                        "continentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns a single Place identified by an ID.. ", 
+                "description": "Returns a single Place identified by an ID.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "ID of the Place.. ", 
+                        "name": "id", 
+                        "in": "path"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/places/geoname-id/{geonameId}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "timezoneId": {
+                                            "type": "string"
+                                        }, 
+                                        "geonamesUpdatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "elevation": {
+                                            "type": "integer"
+                                        }, 
+                                        "name": {
+                                            "type": "string"
+                                        }, 
+                                        "geonameId": {
+                                            "type": "integer"
+                                        }, 
+                                        "country": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "updatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "coordinates": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "localizedName": {
+                                            "type": "string"
+                                        }, 
+                                        "adminDivision2": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "adminDivision1": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "id": {
+                                            "type": "string", 
+                                            "format": "utc-millisec"
+                                        }, 
+                                        "createdAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "population": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns a single Place identified by a Geoname ID.. ", 
+                "description": "Returns a single Place identified by a Geoname ID.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": true, 
+                        "description": "Unique identificator given by Geonames. ", 
+                        "name": "geonameId", 
+                        "in": "path"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \\\"localizedName\\\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/places/ip/me": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "timezoneId": {
+                                            "type": "string"
+                                        }, 
+                                        "geonamesUpdatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "elevation": {
+                                            "type": "integer"
+                                        }, 
+                                        "name": {
+                                            "type": "string"
+                                        }, 
+                                        "geonameId": {
+                                            "type": "integer"
+                                        }, 
+                                        "country": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "updatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "coordinates": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "localizedName": {
+                                            "type": "string"
+                                        }, 
+                                        "adminDivision2": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "adminDivision1": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "id": {
+                                            "type": "string", 
+                                            "format": "utc-millisec"
+                                        }, 
+                                        "createdAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "population": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns the place related to the IP where the request was performed. Returns \"Not Found\" error when no place is related to the IP.. ", 
+                "description": "Returns the place related to the IP where the request was performed. Returns \"Not Found\" error when no place is related to the IP.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/places/ip/{id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "timezoneId": {
+                                            "type": "string"
+                                        }, 
+                                        "geonamesUpdatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "elevation": {
+                                            "type": "integer"
+                                        }, 
+                                        "name": {
+                                            "type": "string"
+                                        }, 
+                                        "geonameId": {
+                                            "type": "integer"
+                                        }, 
+                                        "country": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "updatedAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "coordinates": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "latitude": {
+                                                    "type": "number"
+                                                }, 
+                                                "longitude": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }, 
+                                        "localizedName": {
+                                            "type": "string"
+                                        }, 
+                                        "adminDivision2": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "adminDivision1": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "geonameId": {
+                                                    "type": "integer"
+                                                }, 
+                                                "id": {
+                                                    "type": "string"
+                                                }, 
+                                                "name": {
+                                                    "type": "string"
+                                                }, 
+                                                "localizedName": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "id": {
+                                            "type": "string", 
+                                            "format": "utc-millisec"
+                                        }, 
+                                        "createdAt": {
+                                            "type": "string", 
+                                            "format": "date-time"
+                                        }, 
+                                        "population": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns the Place where a given IP Address is located. Returns \"Not Found\" error when no place is related to the IP. When sending '127.0.0.1' or '0.0.0.0' IP Addresses it will return the Place from the request was performed.. ", 
+                "description": "Returns the Place where a given IP Address is located. Returns \"Not Found\" error when no place is related to the IP. When sending '127.0.0.1' or '0.0.0.0' IP Addresses it will return the Place from the request was performed.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "IP Address (v4 and v6 are supported).. ", 
+                        "name": "id", 
+                        "in": "path"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/places/autocomplete": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Returns a list of places matching a prefix and specified filter properties. Useful to create \"search as you type\" inputs.. ", 
+                "description": "Returns a list of places matching a prefix and specified filter properties. Useful to create \"search as you type\" inputs.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum number of places to return. Used together with \\\"skip\\\" to paginate results. Defaults to 10, maximum is 100.. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Amount of places to ignore before beginning to return results. Used together with \\\"limit\\\" to paginate results. Defaults to 0.. ", 
+                        "name": "skip", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \\\"localizedName\\\" property will be null.. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their country \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US,CA,MX).. ", 
+                        "name": "country", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their adminDivision1 \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US.CA,US.DE).. ", 
+                        "name": "adminDivision1", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum radius from the point specified by \\\"latitude\\\" and \\\"longitude\\\" to filter places located within the area. The value must be expressed in Kilometers. Defaults to 100km.. ", 
+                        "name": "accuracyRadiusKm", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Latitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"longitude\\\" is not specified.. ", 
+                        "name": "latitude", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their adminDivision2 \\\"id\\\". It's possible to specify multiple values separating them with commas.. ", 
+                        "name": "adminDivision2", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Query string to find places which name starts with this prefix.. ", 
+                        "name": "q", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Longitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"latitude\\\" is not specified.. ", 
+                        "name": "longitude", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Filters places by their \\\"type\\\". It's possible to specify multiple values separating them with commas. Valid types are CITY, ADMIN_DIVISION_1, ADMIN_DIVISION_2 and COUNTRY.. ", 
+                        "name": "type", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: spott.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "spott.p.rapidapi.com"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"openapi":"rmokady_clip_prefix_caption.json","apidocs":"","openapi_json":null,"info":{"us":{"name":"rmokady_clip_prefix_caption","description":"Simple image captioning model using CLIP and GPT-2","info":{"about":"","case":null},"sourcelink":"https://replicate.com/rmokady/clip_prefix_caption","price":{"input":"","output":""},"category":{"Image Processing":["Caption images"]}}}}

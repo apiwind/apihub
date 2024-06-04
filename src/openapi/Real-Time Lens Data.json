@@ -1,0 +1,655 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Search by Image on Google Lens in Real-Time, Get Visual Matches, Knowledge Graph, Products, Text, OCR, QR Code Information + More, All In a Single API. The Real-Time Lens Data API is a highly-maintained, fast and comprehensive tool that integrates visual image search capabilities with a suite of powerful features like OCR and sentence and word level text recognition. Additionally, it taps into Google\u2019s knowledge graph, granting applications instant access to contextually relevant information and insights based on the visual input provided. Supports finding image sources (aka reverse image search) and more. Common use cases: Image recognition: extract information from images, such as objects, landmarks, and text. Object recognition: recognize and classify objects within an image, such as identifying a product or a piece of artwork. Visual search: search for visually similar images, such as finding more images of a particular product or landmark. Text extraction: extract and analyze text from images, such as reading and translating text from foreign language signs and menus. Product recognition: recognize and retrieve information about products, such as prices, specifications, and availability. Reading QR Code information. Chat with us live on Discord: https://discord.gg/wxJxGsZgha  ", 
+        "title": "Real-Time Lens Data"
+    }, 
+    "paths": {
+        "/find-image-sources": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "data": {
+                                            "items": {
+                                                "type": "object"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "parameters": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }, 
+                                                "country": {
+                                                    "type": "string"
+                                                }, 
+                                                "language": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "request_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Send an image URL and get the top 400 source web pages (Reverse Image Search). Note: Requests for this endpoint will be charged 2x (as two requests).. ", 
+                "description": "Send an image URL and get the top 400 source web pages (Reverse Image Search). Note: Requests for this endpoint will be charged 2x (as two requests).. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "URL of the image for which to find sources. https://apkmazon.com/wp-content/uploads/2023/03/ask-ai-chatgpt-powered-chat-1.jpg. ", 
+                        "name": "url", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "number"
+                        }, 
+                        "required": false, 
+                        "description": "Maximum number of results to return (1-500). Default: 500. ", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "How to show explicit content in your search results, like sexual activity and graphic violence. Allowed values: off, blur. Default: blur. ", 
+                        "name": "safe_search", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: real-time-lens-data.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/ocr": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "data": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "text": {
+                                                    "type": "string"
+                                                }, 
+                                                "language": {
+                                                    "type": "string"
+                                                }, 
+                                                "paragraphs": {
+                                                    "items": {
+                                                        "type": "object", 
+                                                        "properties": {
+                                                            "box": {
+                                                                "type": "object", 
+                                                                "properties": {
+                                                                    "width": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "top": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "left": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "height": {
+                                                                        "type": "number"
+                                                                    }
+                                                                }
+                                                            }, 
+                                                            "sentences": {
+                                                                "items": {
+                                                                    "type": "object", 
+                                                                    "properties": {
+                                                                        "box": {
+                                                                            "type": "object", 
+                                                                            "properties": {
+                                                                                "width": {
+                                                                                    "type": "number"
+                                                                                }, 
+                                                                                "top": {
+                                                                                    "type": "number"
+                                                                                }, 
+                                                                                "left": {
+                                                                                    "type": "number"
+                                                                                }, 
+                                                                                "height": {
+                                                                                    "type": "number"
+                                                                                }
+                                                                            }
+                                                                        }, 
+                                                                        "words": {
+                                                                            "items": {
+                                                                                "type": "object", 
+                                                                                "properties": {
+                                                                                    "box": {
+                                                                                        "type": "object", 
+                                                                                        "properties": {
+                                                                                            "width": {
+                                                                                                "type": "number"
+                                                                                            }, 
+                                                                                            "top": {
+                                                                                                "type": "number"
+                                                                                            }, 
+                                                                                            "left": {
+                                                                                                "type": "number"
+                                                                                            }, 
+                                                                                            "height": {
+                                                                                                "type": "number"
+                                                                                            }
+                                                                                        }
+                                                                                    }, 
+                                                                                    "word": {
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                }
+                                                                            }, 
+                                                                            "type": "array"
+                                                                        }
+                                                                    }
+                                                                }, 
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    }, 
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }, 
+                                        "parameters": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }, 
+                                                "language": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "request_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Extract text from an image and get paragraph, sentence and word level text detections from Google Lens.. ", 
+                "description": "Extract text from an image and get paragraph, sentence and word level text detections from Google Lens.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "URL of an image from which to extract text, eg https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1844/2017/06/15213029/images-textwrap-topbottom.png. ", 
+                        "name": "url", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Set the language of the results. Allowed values: 2-letter language code, see ISO 639-1. Default: en. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: real-time-lens-data.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/search": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "data": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "visual_matches": {
+                                                    "items": {
+                                                        "type": "object"
+                                                    }, 
+                                                    "type": "array"
+                                                }, 
+                                                "searched_object": {
+                                                    "type": "object", 
+                                                    "properties": {
+                                                        "bounding_box": {
+                                                            "type": "object", 
+                                                            "properties": {
+                                                                "width": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "top": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "left": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "height": {
+                                                                    "type": "number"
+                                                                }
+                                                            }
+                                                        }, 
+                                                        "detections": {
+                                                            "items": {
+                                                                "type": "object", 
+                                                                "properties": {
+                                                                    "confidence": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "type": {
+                                                                        "type": "string"
+                                                                    }, 
+                                                                    "label": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }, 
+                                                            "type": "array"
+                                                        }
+                                                    }
+                                                }, 
+                                                "detected_objects": {
+                                                    "items": {
+                                                        "type": "object", 
+                                                        "properties": {
+                                                            "bounding_box": {
+                                                                "type": "object", 
+                                                                "properties": {
+                                                                    "width": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "top": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "left": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "height": {
+                                                                        "type": "number"
+                                                                    }
+                                                                }
+                                                            }, 
+                                                            "detections": {
+                                                                "items": {
+                                                                    "type": "object", 
+                                                                    "properties": {
+                                                                        "confidence": {
+                                                                            "type": "number"
+                                                                        }, 
+                                                                        "type": {
+                                                                            "type": "string"
+                                                                        }, 
+                                                                        "label": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                }, 
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    }, 
+                                                    "type": "array"
+                                                }, 
+                                                "knowledge_graph": {
+                                                    "items": {
+                                                        "type": "object", 
+                                                        "properties": {
+                                                            "subtitle": {
+                                                                "type": "string"
+                                                            }, 
+                                                            "title": {
+                                                                "type": "string"
+                                                            }, 
+                                                            "link": {
+                                                                "type": "string"
+                                                            }, 
+                                                            "more_images_link": {
+                                                                "type": "string"
+                                                            }, 
+                                                            "images": {
+                                                                "items": {
+                                                                    "type": "object", 
+                                                                    "properties": {
+                                                                        "source": {
+                                                                            "type": "string"
+                                                                        }, 
+                                                                        "title": {
+                                                                            "type": "string"
+                                                                        }, 
+                                                                        "link": {
+                                                                            "type": "string"
+                                                                        }, 
+                                                                        "width": {
+                                                                            "type": "integer"
+                                                                        }, 
+                                                                        "height": {
+                                                                            "type": "integer"
+                                                                        }
+                                                                    }
+                                                                }, 
+                                                                "type": "array"
+                                                            }, 
+                                                            "thumbnail": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }, 
+                                                    "type": "array"
+                                                }, 
+                                                "reverse_image_search_link": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "parameters": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }, 
+                                                "language": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "request_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Search image by url and get visual matches, knowledge graph, products and prices, text and object detections. See it in on Google Lens.. ", 
+                "description": "Search image by url and get visual matches, knowledge graph, products and prices, text and object detections. See it in on Google Lens.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "URL of an image to perform Google Lens search, eg, https://i.imgur.com/HBrB8p0.png. ", 
+                        "name": "url", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Set the language of the results (Google's hl parameter). Allowed values: 2-letter language code, see ISO 639-1. Default: en. ", 
+                        "name": "language", 
+                        "in": "query"
+                    }, 
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": false, 
+                        "description": "Set the country for the search. Allowed values: 2-letter country code, see ISO 3166. Default: us. ", 
+                        "name": "country", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: real-time-lens-data.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }, 
+        "/object-detection": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object", 
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }, 
+                                        "data": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "detected_object_count": {
+                                                    "type": "integer"
+                                                }, 
+                                                "main_detected_object": {
+                                                    "type": "object", 
+                                                    "properties": {
+                                                        "box": {
+                                                            "type": "object", 
+                                                            "properties": {
+                                                                "width": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "top": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "left": {
+                                                                    "type": "number"
+                                                                }, 
+                                                                "height": {
+                                                                    "type": "number"
+                                                                }
+                                                            }
+                                                        }, 
+                                                        "detections": {
+                                                            "items": {
+                                                                "type": "object", 
+                                                                "properties": {
+                                                                    "confidence": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "type": {
+                                                                        "type": "string"
+                                                                    }, 
+                                                                    "label": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }, 
+                                                            "type": "array"
+                                                        }
+                                                    }
+                                                }, 
+                                                "detected_objects": {
+                                                    "items": {
+                                                        "type": "object", 
+                                                        "properties": {
+                                                            "box": {
+                                                                "type": "object", 
+                                                                "properties": {
+                                                                    "width": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "top": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "left": {
+                                                                        "type": "number"
+                                                                    }, 
+                                                                    "height": {
+                                                                        "type": "number"
+                                                                    }
+                                                                }
+                                                            }, 
+                                                            "detections": {
+                                                                "items": {
+                                                                    "type": "object", 
+                                                                    "properties": {
+                                                                        "confidence": {
+                                                                            "type": "number"
+                                                                        }, 
+                                                                        "type": {
+                                                                            "type": "string"
+                                                                        }, 
+                                                                        "label": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                }, 
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    }, 
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }, 
+                                        "parameters": {
+                                            "type": "object", 
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }, 
+                                                "country": {
+                                                    "type": "string"
+                                                }, 
+                                                "language": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, 
+                                        "request_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "summary": "Detect landmarks, places, plants, animals, products, and other objects in an image, including bounding boxes, labels / types and confidence score.. ", 
+                "description": "Detect landmarks, places, plants, animals, products, and other objects in an image, including bounding boxes, labels / types and confidence score.. ", 
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "required": true, 
+                        "description": "URL of an image to perform Google Lens object detection, eg, https://thumbs.dreamstime.com/b/giraffe-zebra-1533191.jpg. ", 
+                        "name": "url", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Eg: ${RAPID-API-KEY}. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Key", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: real-time-lens-data.p.rapidapi.com. ", 
+                        "required": true, 
+                        "name": "X-RapidAPI-Host", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "real-time-lens-data.p.rapidapi.com"
+        }
+    ]
+}

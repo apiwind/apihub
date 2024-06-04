@@ -1,0 +1,1 @@
+{"openapi":"openai_whisper.json","apidocs":"","openapi_json":null,"info":{"us":{"name":"openai_whisper","description":"Convert speech in audio to text","info":{"about":"","case":null},"sourcelink":"https://replicate.com/openai/whisper","price":{"input":"","output":""},"category":{"Audio Processing":["Others"]}}}}

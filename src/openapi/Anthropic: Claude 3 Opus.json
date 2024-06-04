@@ -1,0 +1,322 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Claude 3 Opus is Anthropic's most powerful model for highly complex tasks. It boasts top-level performance, intelligence, fluency, and understanding.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal", 
+        "title": "Anthropic: Claude 3 Opus"
+    }, 
+    "paths": {
+        "/api/v1/chat/completions": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "model"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "top_k": {
+                                        "default": "0", 
+                                        "type": "integer", 
+                                        "description": "This limits the model's choice of tokens at each step, making it choose from a smaller set. A value of 1 means the model will always pick the most likely next token, leading to predictable results. By default this setting is disabled, making the model to consider all choices.Range: 0 or above."
+                                    }, 
+                                    "temperature": {
+                                        "default": "1.0", 
+                                        "type": "number", 
+                                        "description": "This setting influences the variety in the model's responses. Lower values lead to more predictable and typical responses, while higher values encourage more diverse and less common responses. At 0, the model always gives the same response for a given input.Range: 0.0 to 2.0."
+                                    }, 
+                                    "top_a": {
+                                        "default": "0.0", 
+                                        "type": "number", 
+                                        "description": "Consider only the top tokens with \"sufficiently high\" probabilities based on the probability of the most likely token. Think of it like a dynamic Top-P. A lower Top-A value focuses the choices based on the highest probability token but with a narrower scope. A higher Top-A value does not necessarily affect the creativity of the output, but rather refines the filtering process based on the maximum probability.Range: 0.0 to 1.0."
+                                    }, 
+                                    "messages": {
+                                        "items": {
+                                            "$ref": "#/components/schemas/Message"
+                                        }, 
+                                        "type": "array", 
+                                        "description": "Input messages"
+                                    }, 
+                                    "top_p": {
+                                        "default": "1.0", 
+                                        "type": "number", 
+                                        "description": "This setting limits the model's choices to a percentage of likely tokens: only the top tokens whose probabilities add up to P. A lower value makes the model's responses more predictable, while the default setting allows for a full range of token choices. Think of it like a dynamic Top-K.Range: 0.0 to 1.0."
+                                    }, 
+                                    "min_p": {
+                                        "default": "0.0", 
+                                        "type": "number", 
+                                        "description": "Represents the minimum probability for a token to be considered, relative to the probability of the most likely token. (The value changes depending on the confidence level of the most probable token.) If your Min-P is set to 0.1, that means it will only allow for tokens that are at least 1/10th as probable as the best possible option.Range: 0.0 to 1.0."
+                                    }, 
+                                    "presence_penalty": {
+                                        "default": "0.0", 
+                                        "type": "number", 
+                                        "description": "Adjusts how often the model repeats specific tokens already used in the input. Higher values make such repetition less likely, while negative values do the opposite. Token penalty does not scale with the number of occurrences. Negative values will encourage token reuse.Range: -2.0 to 2.0."
+                                    }, 
+                                    "repetition_penalty": {
+                                        "default": "1.0", 
+                                        "type": "number", 
+                                        "description": "Helps to reduce the repetition of tokens from the input. A higher value makes the model less likely to repeat tokens, but too high a value can make the output less coherent (often with run-on sentences that lack small words). Token penalty scales based on original token's probability.Range: 0.0 to 2.0."
+                                    }, 
+                                    "model": {
+                                        "type": "string", 
+                                        "description": "Eg: \"anthropic/claude-3-opus\". The model name to use"
+                                    }, 
+                                    "frequency_penalty": {
+                                        "default": "0.0", 
+                                        "type": "number", 
+                                        "description": "This setting aims to control the repetition of tokens based on how often they appear in the input. It tries to use less frequently those tokens that appear more in the input, proportional to how frequently they occur. Token penalty scales with the number of occurrences. Negative values will encourage token reuse.Range: -2.0 to 2.0."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "summary": "Call API using model Anthropic: Claude 3 Opus", 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "id", 
+                                        "object", 
+                                        "created", 
+                                        "model", 
+                                        "choices", 
+                                        "usage"
+                                    ], 
+                                    "type": "object", 
+                                    "properties": {
+                                        "created": {
+                                            "type": "integer", 
+                                            "description": "The creation timestamp of the completion. Unix timestamp."
+                                        }, 
+                                        "object": {
+                                            "type": "string", 
+                                            "description": "The type of object returned."
+                                        }, 
+                                        "choices": {
+                                            "items": {
+                                                "required": [
+                                                    "index", 
+                                                    "message", 
+                                                    "finish_reason"
+                                                ], 
+                                                "type": "object", 
+                                                "properties": {
+                                                    "index": {
+                                                        "type": "integer", 
+                                                        "description": "The index of the choice."
+                                                    }, 
+                                                    "message": {
+                                                        "required": [
+                                                            "role", 
+                                                            "content"
+                                                        ], 
+                                                        "type": "object", 
+                                                        "properties": {
+                                                            "content": {
+                                                                "type": "string", 
+                                                                "description": "The content of the message."
+                                                            }, 
+                                                            "role": {
+                                                                "type": "string", 
+                                                                "description": "The role of the author of this message (typically 'system', 'user', or 'assistant')."
+                                                            }
+                                                        }
+                                                    }, 
+                                                    "finish_reason": {
+                                                        "type": "string", 
+                                                        "description": "The reason why the completion finished (e.g., 'stop', 'length')."
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "system_fingerprint": {
+                                            "type": "string", 
+                                            "description": "Only present if the provider supports it."
+                                        }, 
+                                        "usage": {
+                                            "required": [
+                                                "prompt_tokens", 
+                                                "completion_tokens", 
+                                                "total_tokens"
+                                            ], 
+                                            "type": "object", 
+                                            "properties": {
+                                                "completion_tokens": {
+                                                    "type": "integer", 
+                                                    "description": "The number of tokens in the completion."
+                                                }, 
+                                                "total_tokens": {
+                                                    "type": "integer", 
+                                                    "description": "The total number of tokens used."
+                                                }, 
+                                                "prompt_tokens": {
+                                                    "type": "integer", 
+                                                    "description": "The number of tokens in the prompt."
+                                                }
+                                            }
+                                        }, 
+                                        "model": {
+                                            "type": "string", 
+                                            "description": "The model used for the completion."
+                                        }, 
+                                        "id": {
+                                            "type": "string", 
+                                            "description": "The unique identifier for the completion."
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer ${OPENROUTER_API_KEY}. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "description": "Eg: application/json. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Content-Type"
+                    }, 
+                    {
+                        "description": "Eg: ${YOUR_SITE_URL}. For including your app on openrouter.ai rankings.", 
+                        "required": false, 
+                        "name": "HTTP-Referer", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }, 
+                    {
+                        "description": "Eg: ${YOUR_SITE_NAME}. Shows in rankings on openrouter.ai.", 
+                        "required": false, 
+                        "name": "X-Title", 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "description": "Call API using model Anthropic: Claude 3 Opus"
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "components": {
+        "schemas": {
+            "ImageContentPart": {
+                "required": [
+                    "type", 
+                    "image_url"
+                ], 
+                "type": "object", 
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "image_url"
+                        ], 
+                        "type": "string"
+                    }, 
+                    "image_url": {
+                        "required": [
+                            "url"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            }, 
+                            "detail": {
+                                "default": "auto", 
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }, 
+            "Message": {
+                "required": [
+                    "role", 
+                    "content"
+                ], 
+                "type": "object", 
+                "properties": {
+                    "content": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            }, 
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/ContentPart"
+                                }, 
+                                "type": "array"
+                            }
+                        ]
+                    }, 
+                    "role": {
+                        "enum": [
+                            "user", 
+                            "assistant", 
+                            "system", 
+                            "tool"
+                        ], 
+                        "type": "string"
+                    }, 
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }, 
+            "TextContent": {
+                "required": [
+                    "type", 
+                    "text"
+                ], 
+                "type": "object", 
+                "properties": {
+                    "text": {
+                        "type": "string"
+                    }, 
+                    "type": {
+                        "enum": [
+                            "text"
+                        ], 
+                        "type": "string"
+                    }
+                }
+            }, 
+            "ContentPart": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/TextContent"
+                    }, 
+                    {
+                        "$ref": "#/components/schemas/ImageContentPart"
+                    }
+                ]
+            }
+        }
+    }, 
+    "servers": [
+        {
+            "url": "https://openrouter.ai"
+        }
+    ]
+}

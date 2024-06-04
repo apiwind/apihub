@@ -1,0 +1,363 @@
+<!-- Generator: Widdershins v4.0.1 -->
+
+<h1 id="chenxwh_shap-e">chenxwh_shap-e v1.0.0</h1>
+
+> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
+
+Generating Conditional 3D Implicit Functions
+
+Base URLs:
+
+* <a href="https://api.replicate.com">https://api.replicate.com</a>
+
+<h1 id="chenxwh_shap-e-default">Default</h1>
+
+## get__predictions
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET https://api.replicate.com/predictions \
+  -H 'Accept: application/json' \
+  -H 'Authorization: [object Object]'
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'Authorization': {
+  "type": "string"
+}
+}
+
+r = requests.get('https://api.replicate.com/predictions', headers = headers)
+
+print(r.json())
+
+```
+
+`GET /predictions`
+
+*List the first page of your predictions*
+
+List the first page of your predictions
+
+<h3 id="get__predictions-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Authorization|header|string|true|Eg: Bearer $REPLICATE_API_TOKEN. |
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "type": "object"
+}
+```
+
+<h3 id="get__predictions-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline|
+
+<h3 id="get__predictions-responseschema">Response Schema</h3>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__predictions
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST https://api.replicate.com/predictions \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: [object Object]' \
+  -H 'Content-Type: [object Object]'
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': {
+  "type": "string"
+},
+  'Content-Type': {
+  "type": "string"
+}
+}
+
+r = requests.post('https://api.replicate.com/predictions', headers = headers)
+
+print(r.json())
+
+```
+
+`POST /predictions`
+
+*Create a prediction and get the output.*
+
+Create a prediction and get the output.
+
+> Body parameter
+
+```json
+{
+  "properties": {
+    "input": {
+      "properties": {
+        "batch_size": {
+          "default": 1,
+          "description": "Number of output",
+          "type": "integer"
+        },
+        "guidance_scale": {
+          "default": 15,
+          "description": "Set the scale for guidanece",
+          "type": "number"
+        },
+        "image": {
+          "description": "A synthetic view image for generating the 3D modeld. To get the best result, remove background from the input image",
+          "format": "uri",
+          "type": "string"
+        },
+        "prompt": {
+          "description": "Text prompt for generating the 3D model, ignored if an image is provide below",
+          "type": "string"
+        },
+        "render_mode": {
+          "default": "nerf",
+          "description": "Choose a render mode",
+          "enum": [
+            "nerf",
+            "stf"
+          ],
+          "type": "string"
+        },
+        "render_size": {
+          "default": 128,
+          "description": "Set the size of the a renderer, higher values take longer to render",
+          "type": "integer"
+        },
+        "save_mesh": {
+          "default": false,
+          "description": "Save the latents as meshes.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "stream": {
+      "description": "Request a URL to receive streaming output using server-sent events (SSE).",
+      "type": "boolean"
+    },
+    "version": {
+      "description": "Eg: 5957069d5c509126a73c7cb68abcddbb985aeefa4d318e7c63ec1352ce6da68c. The ID of the model version",
+      "type": "string"
+    },
+    "webhook": {
+      "description": "An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the get prediction operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.",
+      "type": "string"
+    },
+    "webhook_events_filter": {
+      "description": "By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying webhook_events_filter in the prediction request: start: immediately on prediction start, output: each time a prediction generates an output (note that predictions can generate multiple outputs), logs: each time log output is generated by a prediction, completed: when the prediction reaches a terminal state (succeeded/canceled/failed).",
+      "type": "string"
+    }
+  },
+  "required": [
+    "input",
+    "version"
+  ],
+  "type": "object"
+}
+```
+
+<h3 id="post__predictions-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Authorization|header|string|true|Eg: Bearer $REPLICATE_API_TOKEN. |
+|Content-Type|header|string|true|Eg: application/json. |
+|body|body|object|false|none|
+|» input|body|object|true|none|
+|»» batch_size|body|integer|false|Number of output|
+|»» guidance_scale|body|number|false|Set the scale for guidanece|
+|»» image|body|string(uri)|false|A synthetic view image for generating the 3D modeld. To get the best result, remove background from the input image|
+|»» prompt|body|string|false|Text prompt for generating the 3D model, ignored if an image is provide below|
+|»» render_mode|body|string|false|Choose a render mode|
+|»» render_size|body|integer|false|Set the size of the a renderer, higher values take longer to render|
+|»» save_mesh|body|boolean|false|Save the latents as meshes.|
+|» stream|body|boolean|false|Request a URL to receive streaming output using server-sent events (SSE).|
+|» version|body|string|true|Eg: 5957069d5c509126a73c7cb68abcddbb985aeefa4d318e7c63ec1352ce6da68c. The ID of the model version|
+|» webhook|body|string|false|An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the get prediction operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.|
+|» webhook_events_filter|body|string|false|By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying webhook_events_filter in the prediction request: start: immediately on prediction start, output: each time a prediction generates an output (note that predictions can generate multiple outputs), logs: each time log output is generated by a prediction, completed: when the prediction reaches a terminal state (succeeded/canceled/failed).|
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|»» render_mode|nerf|
+|»» render_mode|stf|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "items": {
+    "type": "object"
+  },
+  "type": "array"
+}
+```
+
+<h3 id="post__predictions-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline|
+
+<h3 id="post__predictions-responseschema">Response Schema</h3>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__predictions_{prediction_id}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET https://api.replicate.com/predictions/{prediction_id} \
+  -H 'Accept: application/json' \
+  -H 'Authorization: [object Object]'
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'Authorization': {
+  "type": "string"
+}
+}
+
+r = requests.get('https://api.replicate.com/predictions/{prediction_id}', headers = headers)
+
+print(r.json())
+
+```
+
+`GET /predictions/{prediction_id}`
+
+*Get the latest version of a prediction by id*
+
+Get the latest version of a prediction by id
+
+<h3 id="get__predictions_{prediction_id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Authorization|header|string|true|Eg: Bearer $REPLICATE_API_TOKEN. |
+|prediction_id|path|string|true|The ID of the prediction to get|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "type": "object"
+}
+```
+
+<h3 id="get__predictions_{prediction_id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline|
+
+<h3 id="get__predictions_{prediction_id}-responseschema">Response Schema</h3>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__predictions_{prediction_id}_cancel
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST https://api.replicate.com/predictions/{prediction_id}/cancel \
+  -H 'Accept: application/json' \
+  -H 'Authorization: [object Object]'
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'Authorization': {
+  "type": "string"
+}
+}
+
+r = requests.post('https://api.replicate.com/predictions/{prediction_id}/cancel', headers = headers)
+
+print(r.json())
+
+```
+
+`POST /predictions/{prediction_id}/cancel`
+
+*Cancel an in progress prediction*
+
+Cancel an in progress prediction
+
+<h3 id="post__predictions_{prediction_id}_cancel-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Authorization|header|string|true|Eg: Bearer $REPLICATE_API_TOKEN. |
+|prediction_id|path|string|true|The ID of the prediction to cancel|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "type": "object"
+}
+```
+
+<h3 id="post__predictions_{prediction_id}_cancel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline|
+
+<h3 id="post__predictions_{prediction_id}_cancel-responseschema">Response Schema</h3>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+

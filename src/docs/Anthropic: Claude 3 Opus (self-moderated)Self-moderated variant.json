@@ -1,0 +1,17 @@
+{
+    "info": {
+        "us": {
+            "sourceLink": "https://openrouter.ai/models/anthropic/claude-3-opus:beta",
+            "price": {
+                "input": "$15",
+                "output": "$75"
+            },
+            "name": "Anthropic: Claude 3 Opus (self-moderated)Self-moderated variant",
+            "description": "This is a lower-latency version of [Claude 3 Opus](/models/anthropic/claude-3-opus), made available in collaboration with Anthropic, that is self-moderated: response moderation happens on the model's side instead of OpenRouter's. It's in beta, and may change in the future.\n[Claude 3 Opus](/models/anthropic/claude-3-opus) is Anthropic's most powerful model for highly complex tasks. It boasts top-level performance, intelligence, fluency, and understanding.\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n#multimodal",
+            "category": {
+                "LLM": []
+            }
+        }
+    },
+    "openapi": "Anthropic: Claude 3 Opus (self-moderated)Self-moderated variant.json"
+}

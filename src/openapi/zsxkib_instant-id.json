@@ -1,0 +1,376 @@
+{
+    "info": {
+        "version": "1.0.0", 
+        "description": "Make realistic images of real people instantly", 
+        "title": "zsxkib_instant-id"
+    }, 
+    "paths": {
+        "/predictions": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "input", 
+                                    "version"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "input": {
+                                        "required": [
+                                            "image"
+                                        ], 
+                                        "type": "object", 
+                                        "properties": {
+                                            "enable_lcm": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "Enable Fast Inference with LCM (Latent Consistency Models) - speeds up inference steps, trade-off is the quality of the generated image. Performs better with close-up portrait face images"
+                                            }, 
+                                            "prompt": {
+                                                "default": "a person", 
+                                                "type": "string", 
+                                                "description": "Input prompt"
+                                            }, 
+                                            "enable_canny_controlnet": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "Enable Canny ControlNet, overrides strength if set to false"
+                                            }, 
+                                            "image": {
+                                                "type": "string", 
+                                                "description": "Input face image", 
+                                                "format": "uri"
+                                            }, 
+                                            "enable_pose_controlnet": {
+                                                "default": true, 
+                                                "type": "boolean", 
+                                                "description": "Enable Openpose ControlNet, overrides strength if set to false"
+                                            }, 
+                                            "pose_image": {
+                                                "type": "string", 
+                                                "description": "(Optional) reference pose image", 
+                                                "format": "uri"
+                                            }, 
+                                            "output_quality": {
+                                                "default": 80, 
+                                                "minimum": 0, 
+                                                "type": "integer", 
+                                                "description": "Quality of the output images, from 0 to 100. 100 is best quality, 0 is lowest quality.", 
+                                                "maximum": 100
+                                            }, 
+                                            "num_inference_steps": {
+                                                "default": 30, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Number of denoising steps", 
+                                                "maximum": 500
+                                            }, 
+                                            "pose_strength": {
+                                                "default": 0.4, 
+                                                "minimum": 0, 
+                                                "type": "number", 
+                                                "description": "Openpose ControlNet strength, effective only if `enable_pose_controlnet` is true", 
+                                                "maximum": 1
+                                            }, 
+                                            "canny_strength": {
+                                                "default": 0.3, 
+                                                "minimum": 0, 
+                                                "type": "number", 
+                                                "description": "Canny ControlNet strength, effective only if `enable_canny_controlnet` is true", 
+                                                "maximum": 1
+                                            }, 
+                                            "controlnet_conditioning_scale": {
+                                                "default": 0.8, 
+                                                "minimum": 0, 
+                                                "type": "number", 
+                                                "description": "Scale for IdentityNet strength (for fidelity)", 
+                                                "maximum": 1.5
+                                            }, 
+                                            "output_format": {
+                                                "default": "webp", 
+                                                "enum": [
+                                                    "webp", 
+                                                    "jpg", 
+                                                    "png"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Format of the output images"
+                                            }, 
+                                            "guidance_scale": {
+                                                "default": 7.5, 
+                                                "minimum": 1, 
+                                                "type": "number", 
+                                                "description": "Scale for classifier-free guidance", 
+                                                "maximum": 50
+                                            }, 
+                                            "lcm_num_inference_steps": {
+                                                "default": 5, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Only used when `enable_lcm` is set to True, Number of denoising steps when using LCM", 
+                                                "maximum": 10
+                                            }, 
+                                            "num_outputs": {
+                                                "default": 1, 
+                                                "minimum": 1, 
+                                                "type": "integer", 
+                                                "description": "Number of images to output", 
+                                                "maximum": 8
+                                            }, 
+                                            "scheduler": {
+                                                "default": "EulerDiscreteScheduler", 
+                                                "enum": [
+                                                    "DEISMultistepScheduler", 
+                                                    "HeunDiscreteScheduler", 
+                                                    "EulerDiscreteScheduler", 
+                                                    "DPMSolverMultistepScheduler", 
+                                                    "DPMSolverMultistepScheduler-Karras", 
+                                                    "DPMSolverMultistepScheduler-Karras-SDE"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Scheduler"
+                                            }, 
+                                            "sdxl_weights": {
+                                                "default": "stable-diffusion-xl-base-1.0", 
+                                                "enum": [
+                                                    "stable-diffusion-xl-base-1.0", 
+                                                    "juggernaut-xl-v8", 
+                                                    "afrodite-xl-v2", 
+                                                    "albedobase-xl-20", 
+                                                    "albedobase-xl-v13", 
+                                                    "animagine-xl-30", 
+                                                    "anime-art-diffusion-xl", 
+                                                    "anime-illust-diffusion-xl", 
+                                                    "dreamshaper-xl", 
+                                                    "dynavision-xl-v0610", 
+                                                    "guofeng4-xl", 
+                                                    "nightvision-xl-0791", 
+                                                    "omnigen-xl", 
+                                                    "pony-diffusion-v6-xl", 
+                                                    "protovision-xl-high-fidel", 
+                                                    "RealVisXL_V3.0_Turbo", 
+                                                    "RealVisXL_V4.0_Lightning"
+                                                ], 
+                                                "type": "string", 
+                                                "description": "Pick which base weights you want to use"
+                                            }, 
+                                            "seed": {
+                                                "type": "integer", 
+                                                "description": "Random seed. Leave blank to randomize the seed"
+                                            }, 
+                                            "enhance_nonface_region": {
+                                                "default": true, 
+                                                "type": "boolean", 
+                                                "description": "Enhance non-face region"
+                                            }, 
+                                            "enable_depth_controlnet": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "Enable Depth ControlNet, overrides strength if set to false"
+                                            }, 
+                                            "ip_adapter_scale": {
+                                                "default": 0.8, 
+                                                "minimum": 0, 
+                                                "type": "number", 
+                                                "description": "Scale for image adapter strength (for detail)", 
+                                                "maximum": 1.5
+                                            }, 
+                                            "disable_safety_checker": {
+                                                "default": false, 
+                                                "type": "boolean", 
+                                                "description": "Disable safety checker for generated images"
+                                            }, 
+                                            "depth_strength": {
+                                                "default": 0.5, 
+                                                "minimum": 0, 
+                                                "type": "number", 
+                                                "description": "Depth ControlNet strength, effective only if `enable_depth_controlnet` is true", 
+                                                "maximum": 1
+                                            }, 
+                                            "lcm_guidance_scale": {
+                                                "default": 1.5, 
+                                                "minimum": 1, 
+                                                "type": "number", 
+                                                "description": "Only used when `enable_lcm` is set to True, Scale for classifier-free guidance when using LCM", 
+                                                "maximum": 20
+                                            }, 
+                                            "negative_prompt": {
+                                                "default": "", 
+                                                "type": "string", 
+                                                "description": "Input Negative Prompt"
+                                            }
+                                        }
+                                    }, 
+                                    "webhook_events_filter": {
+                                        "type": "string", 
+                                        "description": "By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying webhook_events_filter in the prediction request: start: immediately on prediction start, output: each time a prediction generates an output (note that predictions can generate multiple outputs), logs: each time log output is generated by a prediction, completed: when the prediction reaches a terminal state (succeeded/canceled/failed)."
+                                    }, 
+                                    "webhook": {
+                                        "type": "string", 
+                                        "description": "An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the get prediction operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting."
+                                    }, 
+                                    "version": {
+                                        "type": "string", 
+                                        "description": "Eg: 491ddf5be6b827f8931f088ef10c6d015f6d99685e6454e6f04c8ac298979686. The ID of the model version"
+                                    }, 
+                                    "stream": {
+                                        "type": "boolean", 
+                                        "description": "Request a URL to receive streaming output using server-sent events (SSE)."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "summary": "Create a prediction and get the output.", 
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "description": "Eg: application/json. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Content-Type"
+                    }
+                ], 
+                "description": "Create a prediction and get the output."
+            }, 
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "List the first page of your predictions", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }
+                ], 
+                "summary": "List the first page of your predictions"
+            }
+        }, 
+        "/predictions/{prediction_id}/cancel": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Cancel an in progress prediction", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to cancel", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Cancel an in progress prediction"
+            }
+        }, 
+        "/predictions/{prediction_id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }, 
+                        "description": "successful operation"
+                    }
+                }, 
+                "description": "Get the latest version of a prediction by id", 
+                "parameters": [
+                    {
+                        "description": "Eg: Bearer $REPLICATE_API_TOKEN. ", 
+                        "required": true, 
+                        "in": "header", 
+                        "schema": {
+                            "type": "string"
+                        }, 
+                        "name": "Authorization"
+                    }, 
+                    {
+                        "required": true, 
+                        "in": "path", 
+                        "description": "The ID of the prediction to get", 
+                        "name": "prediction_id", 
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ], 
+                "summary": "Get the latest version of a prediction by id"
+            }
+        }
+    }, 
+    "openapi": "3.0.0", 
+    "servers": [
+        {
+            "url": "https://api.replicate.com"
+        }
+    ]
+}
