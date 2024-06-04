@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/rossjillian/controlnet](https://replicate
 
 ## APIDocs
 
-
+[rossjillian_controlnet API Docs](../apis/rossjillian_controlnet.md)
 
 ## APIPrice
 

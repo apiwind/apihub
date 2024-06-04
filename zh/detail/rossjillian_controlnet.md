@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[rossjillian_controlnet API Docs](../apis/zh/rossjillian_controlnet.md)
 
 ## API价格
 

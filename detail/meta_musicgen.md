@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/meta/musicgen](https://replicate.com/meta
 
 ## APIDocs
 
-
+[meta_musicgen API Docs](../apis/meta_musicgen.md)
 
 ## APIPrice
 

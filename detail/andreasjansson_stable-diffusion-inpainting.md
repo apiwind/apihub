@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/andreasjansson/stable-diffusion-inpaintin
 
 ## APIDocs
 
-
+[andreasjansson_stable-diffusion-inpainting API Docs](../apis/andreasjansson_stable-diffusion-inpainting.md)
 
 ## APIPrice
 

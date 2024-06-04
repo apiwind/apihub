@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[fofr_audio-to-waveform API Docs](../apis/zh/fofr_audio-to-waveform.md)
 
 ## API价格
 

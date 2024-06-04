@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/jingyunliang/swinir](https://replicate.co
 
 ## APIDocs
 
-
+[jingyunliang_swinir API Docs](../apis/jingyunliang_swinir.md)
 
 ## APIPrice
 

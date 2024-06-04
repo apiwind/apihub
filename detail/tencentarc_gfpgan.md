@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/tencentarc/gfpgan](https://replicate.com/
 
 ## APIDocs
 
-
+[tencentarc_gfpgan API Docs](../apis/tencentarc_gfpgan.md)
 
 ## APIPrice
 

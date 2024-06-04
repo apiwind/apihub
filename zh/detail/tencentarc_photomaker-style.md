@@ -1,12 +1,12 @@
-# 腾讯 ARC 照片制作风格
+# tencentarc_photomaker-style
 
-生成照片、绘画和头像，以任何风格，仅需几秒钟即可完成。（风格化版本）
+在几秒钟内为任何人以任何风格创建照片，绘画和头像。(风格化版本)
 
 官网: [https://replicate.com/tencentarc/photomaker-style](https://replicate.com/tencentarc/photomaker-style)
 
 ## API文档
 
-
+[tencentarc_photomaker-style API Docs](../apis/zh/tencentarc_photomaker-style.md)
 
 ## API价格
 

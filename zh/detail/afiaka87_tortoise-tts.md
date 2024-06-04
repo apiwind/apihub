@@ -6,7 +6,7 @@ Generate speech from text, clone voices from mp3 files. From James Betker AKA "n
 
 ## API文档
 
-
+[afiaka87_tortoise-tts API Docs](../apis/zh/afiaka87_tortoise-tts.md)
 
 ## API价格
 

@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/afiaka87/tortoise-tts](https://replicate.
 
 ## APIDocs
 
-
+[afiaka87_tortoise-tts API Docs](../apis/afiaka87_tortoise-tts.md)
 
 ## APIPrice
 

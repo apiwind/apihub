@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[meta_musicgen API Docs](../apis/zh/meta_musicgen.md)
 
 ## API价格
 

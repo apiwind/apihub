@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/cjwbw/damo-text-to-video](https://replica
 
 ## APIDocs
 
-
+[chenxwh_damo-text-to-video API Docs](../apis/chenxwh_damo-text-to-video.md)
 
 ## APIPrice
 

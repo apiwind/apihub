@@ -1,12 +1,12 @@
 # fofr_face-to-many
 
-将面孔转变为3D、表情符号、像素艺术、视频游戏、粘土动画或玩具
+我们
 
 官网: [https://replicate.com/fofr/face-to-many](https://replicate.com/fofr/face-to-many)
 
 ## API文档
 
-
+[fofr_face-to-many API Docs](../apis/zh/fofr_face-to-many.md)
 
 ## API价格
 

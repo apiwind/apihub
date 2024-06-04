@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[openai_whisper API Docs](../apis/zh/openai_whisper.md)
 
 ## API价格
 

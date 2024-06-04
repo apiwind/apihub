@@ -6,7 +6,7 @@ SourceLinkName: [https://rapidapi.com/omarmhaimdat/api/translate287/](https://ra
 
 ## APIDocs
 
-
+[Translate API Docs](../apis/Translate.md)
 
 ## APIPrice
 

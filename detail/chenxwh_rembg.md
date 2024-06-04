@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/cjwbw/rembg](https://replicate.com/cjwbw/
 
 ## APIDocs
 
-
+[chenxwh_rembg API Docs](../apis/chenxwh_rembg.md)
 
 ## APIPrice
 

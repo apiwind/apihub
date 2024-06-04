@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/nightmareai/real-esrgan](https://replicat
 
 ## APIDocs
 
-
+[nightmareai_real-esrgan API Docs](../apis/nightmareai_real-esrgan.md)
 
 ## APIPrice
 

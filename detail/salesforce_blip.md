@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/salesforce/blip](https://replicate.com/sa
 
 ## APIDocs
 
-
+[salesforce_blip API Docs](../apis/salesforce_blip.md)
 
 ## APIPrice
 

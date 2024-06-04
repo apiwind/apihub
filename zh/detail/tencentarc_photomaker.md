@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[tencentarc_photomaker API Docs](../apis/zh/tencentarc_photomaker.md)
 
 ## API价格
 

@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/openai/whisper](https://replicate.com/ope
 
 ## APIDocs
 
-
+[openai_whisper API Docs](../apis/openai_whisper.md)
 
 ## APIPrice
 

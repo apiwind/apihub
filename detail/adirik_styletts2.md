@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/adirik/styletts2](https://replicate.com/a
 
 ## APIDocs
 
-
+[adirik_styletts2 API Docs](../apis/adirik_styletts2.md)
 
 ## APIPrice
 

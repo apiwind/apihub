@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[adirik_styletts2 API Docs](../apis/zh/adirik_styletts2.md)
 
 ## API价格
 

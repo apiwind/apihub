@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/methexis-inc/img2prompt](https://replicat
 
 ## APIDocs
 
-
+[methexis-inc_img2prompt API Docs](../apis/methexis-inc_img2prompt.md)
 
 ## APIPrice
 

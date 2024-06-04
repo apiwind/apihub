@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/lucataco/animate-diff](https://replicate.
 
 ## APIDocs
 
-
+[lucataco_animate-diff API Docs](../apis/lucataco_animate-diff.md)
 
 ## APIPrice
 

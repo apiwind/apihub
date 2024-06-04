@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/daanelson/minigpt-4](https://replicate.co
 
 ## APIDocs
 
-
+[daanelson_minigpt-4 API Docs](../apis/daanelson_minigpt-4.md)
 
 ## APIPrice
 

@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/riffusion/riffusion](https://replicate.co
 
 ## APIDocs
 
-
+[riffusion_riffusion API Docs](../apis/riffusion_riffusion.md)
 
 ## APIPrice
 

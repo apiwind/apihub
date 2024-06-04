@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/andreasjansson/clip-features](https://rep
 
 ## APIDocs
 
-
+[andreasjansson_clip-features API Docs](../apis/andreasjansson_clip-features.md)
 
 ## APIPrice
 

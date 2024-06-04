@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/fofr/audio-to-waveform](https://replicate
 
 ## APIDocs
 
-
+[fofr_audio-to-waveform API Docs](../apis/fofr_audio-to-waveform.md)
 
 ## APIPrice
 

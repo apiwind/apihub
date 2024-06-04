@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/fofr/face-to-many](https://replicate.com/
 
 ## APIDocs
 
-
+[fofr_face-to-many API Docs](../apis/fofr_face-to-many.md)
 
 ## APIPrice
 

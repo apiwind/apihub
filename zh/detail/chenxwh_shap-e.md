@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[chenxwh_shap-e API Docs](../apis/zh/chenxwh_shap-e.md)
 
 ## API价格
 

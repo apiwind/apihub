@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/suno-ai/bark](https://replicate.com/suno-
 
 ## APIDocs
 
-
+[suno-ai_bark API Docs](../apis/suno-ai_bark.md)
 
 ## APIPrice
 

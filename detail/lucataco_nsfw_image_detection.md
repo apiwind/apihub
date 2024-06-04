@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/lucataco/nsfw_image_detection](https://re
 
 ## APIDocs
 
-
+[lucataco_nsfw_image_detection API Docs](../apis/lucataco_nsfw_image_detection.md)
 
 ## APIPrice
 

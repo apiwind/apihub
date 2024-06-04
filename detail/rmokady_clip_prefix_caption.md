@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/rmokady/clip_prefix_caption](https://repl
 
 ## APIDocs
 
-
+[rmokady_clip_prefix_caption API Docs](../apis/rmokady_clip_prefix_caption.md)
 
 ## APIPrice
 

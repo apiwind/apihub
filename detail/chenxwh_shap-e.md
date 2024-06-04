@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/cjwbw/shap-e](https://replicate.com/cjwbw
 
 ## APIDocs
 
-
+[chenxwh_shap-e API Docs](../apis/chenxwh_shap-e.md)
 
 ## APIPrice
 

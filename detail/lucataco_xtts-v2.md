@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/lucataco/xtts-v2](https://replicate.com/l
 
 ## APIDocs
 
-
+[lucataco_xtts-v2 API Docs](../apis/lucataco_xtts-v2.md)
 
 ## APIPrice
 

@@ -1,12 +1,12 @@
 # abiruyt_text-extract-ocr
 
-一个简单的OCR模型，可以轻松从图像中提取文本。
+光学字符识别
 
 官网: [https://replicate.com/abiruyt/text-extract-ocr](https://replicate.com/abiruyt/text-extract-ocr)
 
 ## API文档
 
-
+[abiruyt_text-extract-ocr API Docs](../apis/zh/abiruyt_text-extract-ocr.md)
 
 ## API价格
 

@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/tencentarc/photomaker](https://replicate.
 
 ## APIDocs
 
-
+[tencentarc_photomaker API Docs](../apis/tencentarc_photomaker.md)
 
 ## APIPrice
 

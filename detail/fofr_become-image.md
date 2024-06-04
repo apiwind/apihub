@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/fofr/become-image](https://replicate.com/
 
 ## APIDocs
 
-
+[fofr_become-image API Docs](../apis/fofr_become-image.md)
 
 ## APIPrice
 

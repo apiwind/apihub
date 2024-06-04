@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/sczhou/codeformer](https://replicate.com/
 
 ## APIDocs
 
-
+[sczhou_codeformer API Docs](../apis/sczhou_codeformer.md)
 
 ## APIPrice
 

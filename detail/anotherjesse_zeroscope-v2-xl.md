@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/anotherjesse/zeroscope-v2-xl](https://rep
 
 ## APIDocs
 
-
+[anotherjesse_zeroscope-v2-xl API Docs](../apis/anotherjesse_zeroscope-v2-xl.md)
 
 ## APIPrice
 

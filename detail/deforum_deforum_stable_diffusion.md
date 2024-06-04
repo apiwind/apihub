@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/deforum/deforum_stable_diffusion](https:/
 
 ## APIDocs
 
-
+[deforum_deforum_stable_diffusion API Docs](../apis/deforum_deforum_stable_diffusion.md)
 
 ## APIPrice
 

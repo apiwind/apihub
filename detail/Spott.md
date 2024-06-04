@@ -6,7 +6,7 @@ SourceLinkName: [https://rapidapi.com/Spott/api/spott/](https://rapidapi.com/Spo
 
 ## APIDocs
 
-
+[Spott API Docs](../apis/Spott.md)
 
 ## APIPrice
 

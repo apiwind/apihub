@@ -1,12 +1,12 @@
-# 夜魇 AI 实境增强生成对抗网络
+# nightmareai_real-esrgan
 
-Real-ESRGAN with optional face correction and adjustable upscale
+具有可选人脸校正和可调放大比例的Real-ESRGAN
 
 官网: [https://replicate.com/nightmareai/real-esrgan](https://replicate.com/nightmareai/real-esrgan)
 
 ## API文档
 
-
+[nightmareai_real-esrgan API Docs](../apis/zh/nightmareai_real-esrgan.md)
 
 ## API价格
 

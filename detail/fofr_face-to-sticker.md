@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/fofr/face-to-sticker](https://replicate.c
 
 ## APIDocs
 
-
+[fofr_face-to-sticker API Docs](../apis/fofr_face-to-sticker.md)
 
 ## APIPrice
 

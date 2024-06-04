@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/abiruyt/text-extract-ocr](https://replica
 
 ## APIDocs
 
-
+[abiruyt_text-extract-ocr API Docs](../apis/abiruyt_text-extract-ocr.md)
 
 ## APIPrice
 

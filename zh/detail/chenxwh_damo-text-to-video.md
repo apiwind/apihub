@@ -6,7 +6,7 @@
 
 ## API文档
 
-
+[chenxwh_damo-text-to-video API Docs](../apis/zh/chenxwh_damo-text-to-video.md)
 
 ## API价格
 

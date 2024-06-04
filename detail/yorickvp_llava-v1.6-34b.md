@@ -6,7 +6,7 @@ SourceLinkName: [https://replicate.com/yorickvp/llava-v1.6-34b](https://replicat
 
 ## APIDocs
 
-
+[yorickvp_llava-v1.6-34b API Docs](../apis/yorickvp_llava-v1.6-34b.md)
 
 ## APIPrice
 
